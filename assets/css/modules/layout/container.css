@@ -1,0 +1,160 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Container
+   assets/css/modules/layout/container.css
+   Versão: 1.0.0
+*/
+
+/* Container padrão */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Container pequeno */
+.container-sm {
+  max-width: 768px;
+}
+
+/* Container médio */
+.container-md {
+  max-width: 992px;
+}
+
+/* Container grande */
+.container-lg {
+  max-width: 1200px;
+}
+
+/* Container extra grande */
+.container-xl {
+  max-width: 1400px;
+}
+
+/* Container fluido */
+.container-fluid {
+  max-width: none;
+}
+
+/* Container com margem */
+.container-margin {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Container com bordas */
+.container-bordered {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+}
+
+/* Container com sombra */
+.container-shadow {
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  background-color: var(--color-surface);
+}
+
+/* Container com borda de destaque */
+.container-highlight {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--spacing-md);
+}
+
+/* Container com fundo */
+.container-bg {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+}
+
+/* Container de duas colunas */
+.container-two-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-2xl);
+}
+
+/* Container com barra lateral à esquerda */
+.container-with-sidebar-left {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-2xl);
+}
+
+/* Container com barra lateral à direita */
+.container-with-sidebar-right {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-2xl);
+}
+
+/* Container para artigo de leitura */
+.container-reading {
+  max-width: 768px;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Container centralizado vertical */
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(
+    100vh - 200px
+  ); /* Ajuste conforme a altura do header e footer */
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .container-with-sidebar-left,
+  .container-with-sidebar-right {
+    grid-template-columns: 250px 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-two-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-two-cols,
+  .container-with-sidebar-left,
+  .container-with-sidebar-right {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .container-margin {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .container-bordered,
+  .container-shadow,
+  .container-bg {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 576px) {
+  .container-margin {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .container-bordered,
+  .container-shadow,
+  .container-bg {
+    padding: var(--spacing-md);
+  }
+}

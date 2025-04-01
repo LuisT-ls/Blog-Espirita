@@ -1,0 +1,269 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS da Seção Hero
+   Versão: 1.0.0
+*/
+
+.hero {
+  position: relative;
+  padding: 5rem 0;
+  background: var(--gradient-spiritual);
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/pattern-light.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero__content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero__title {
+  font-size: var(--font-size-4xl);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #e0e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero__description {
+  font-size: var(--font-size-lg);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: var(--line-height-relaxed);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero__illustration {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.hero__decoration {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.hero__decoration::before,
+.hero__decoration::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero__decoration::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation: pulse 6s infinite alternate;
+}
+
+.hero__decoration::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.3);
+  animation: pulse 4s infinite alternate-reverse;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Partículas de luz */
+.hero__decoration span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.hero__decoration span:nth-child(1) {
+  top: 20%;
+  left: 30%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.hero__decoration span:nth-child(2) {
+  top: 60%;
+  left: 40%;
+  animation: float 6s infinite ease-in-out 1s;
+}
+
+.hero__decoration span:nth-child(3) {
+  top: 40%;
+  left: 70%;
+  animation: float 7s infinite ease-in-out 2s;
+}
+
+.hero__decoration span:nth-child(4) {
+  top: 70%;
+  left: 20%;
+  animation: float 9s infinite ease-in-out 3s;
+}
+
+.hero__decoration span:nth-child(5) {
+  top: 30%;
+  left: 80%;
+  animation: float 5s infinite ease-in-out 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(15px) translateX(10px);
+  }
+}
+
+/* Versão hero para páginas internas */
+.hero--inner {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero--inner .hero__content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero--inner .hero__illustration {
+  display: none;
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__illustration {
+    max-width: 400px;
+  }
+
+  .hero__decoration {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero__description {
+    font-size: var(--font-size-base);
+  }
+
+  .hero__illustration {
+    max-width: 300px;
+  }
+
+  .hero__decoration {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero__illustration {
+    max-width: 250px;
+  }
+
+  .hero__decoration {
+    height: 200px;
+  }
+}

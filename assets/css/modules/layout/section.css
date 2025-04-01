@@ -1,0 +1,295 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Seções
+   assets/css/modules/layout/section.css
+   Versão: 1.0.0
+*/
+
+/* Seção base */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+/* Cabeçalho da seção */
+.section__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.section__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Rodapé da seção */
+.section__footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Seção com fundo alternativo */
+.section--alt {
+  background-color: var(--color-background-alt);
+}
+
+/* Seção com fundo primário */
+.section--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.section--primary .section__title,
+.section--primary .section__subtitle {
+  color: white;
+}
+
+/* Seção com imagem de fundo */
+.section--bg-image {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.section--bg-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.section--bg-image .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section--bg-image .section__title,
+.section--bg-image .section__subtitle {
+  color: white;
+}
+
+/* Seção com gradiente */
+.section--gradient {
+  background: var(--gradient-spiritual);
+  color: white;
+}
+
+.section--gradient .section__title,
+.section--gradient .section__subtitle {
+  color: white;
+}
+
+/* Seção com design diagonal */
+.section--diagonal {
+  position: relative;
+  padding: 8rem 0;
+}
+
+.section--diagonal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-background-alt);
+  transform-origin: top left;
+  transform: skewY(-3deg);
+  z-index: -1;
+}
+
+/* Seção pequena */
+.section--sm {
+  padding: 3rem 0;
+}
+
+/* Seção grande */
+.section--lg {
+  padding: 8rem 0;
+}
+
+/* Seção com divisor */
+.section--divider {
+  position: relative;
+}
+
+.section--divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius);
+}
+
+/* Seção com onda */
+.section--wave {
+  position: relative;
+  padding-bottom: 8rem;
+}
+
+.section--wave::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-image: url('../img/wave.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Decoração para seções */
+.section-decoration {
+  position: absolute;
+  z-index: -1;
+}
+
+.section-decoration--top-right {
+  top: 0;
+  right: 0;
+}
+
+.section-decoration--bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+/* Grade dentro de seções */
+.section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.section__grid-col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.section__grid-col-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.section__grid-col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Seção com cabeçalho alinhado à esquerda */
+.section--header-left .section__header {
+  text-align: left;
+  margin-left: 0;
+}
+
+/* Seção com cabeçalho alinhado à direita */
+.section--header-right .section__header {
+  text-align: right;
+  margin-right: 0;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .section__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .section__grid-col-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section--lg {
+    padding: 6rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section__header {
+    margin-bottom: 2rem;
+  }
+
+  .section__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section__footer {
+    margin-top: 2rem;
+  }
+
+  .section__grid-col-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section--diagonal {
+    padding: 5rem 0;
+  }
+
+  .section--wave {
+    padding-bottom: 5rem;
+  }
+
+  .section--wave::after {
+    height: 100px;
+  }
+
+  .section--lg {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .section__grid-col-2,
+  .section__grid-col-3,
+  .section__grid-col-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section--diagonal {
+    padding: 4rem 0;
+  }
+
+  .section--diagonal::before {
+    transform: skewY(-5deg);
+  }
+
+  .section--lg {
+    padding: 4rem 0;
+  }
+}

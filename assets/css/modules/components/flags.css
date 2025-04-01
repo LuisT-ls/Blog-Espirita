@@ -1,0 +1,149 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Flags e Tags
+   assets/css/modules/components/flags.css
+   Versão: 1.0.0
+*/
+
+/* Flag base */
+.flag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  border-radius: var(--border-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Variações de cores */
+.flag--primary {
+  background-color: rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary-dark);
+}
+
+.flag--secondary {
+  background-color: rgba(var(--color-secondary-rgb), 0.15);
+  color: var(--color-secondary-dark);
+}
+
+.flag--accent {
+  background-color: rgba(var(--color-accent-rgb), 0.15);
+  color: var(--color-accent-dark);
+}
+
+.flag--success {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.flag--info {
+  background-color: var(--color-info-light);
+  color: var(--color-info-dark);
+}
+
+.flag--warning {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
+}
+
+.flag--error {
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+}
+
+/* Variações de tamanho */
+.flag--sm {
+  padding: 0.15rem 0.5rem;
+  font-size: calc(var(--font-size-xs) - 1px);
+}
+
+.flag--lg {
+  padding: 0.35rem 1rem;
+  font-size: var(--font-size-sm);
+}
+
+/* Flag com ícone */
+.flag--icon {
+  padding-left: 0.5rem;
+}
+
+.flag__icon {
+  margin-right: 0.35rem;
+  font-size: 0.9em;
+}
+
+/* Flag com contagem */
+.flag--count {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flag com borda */
+.flag--outlined {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
+/* Flag removível */
+.flag--removable {
+  padding-right: 0.35rem;
+}
+
+.flag__remove {
+  margin-left: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: inherit;
+  font-size: 0.7em;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.flag__remove:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Categorias específicas do blog */
+.flag--category-doutrina {
+  background-color: rgba(106, 90, 205, 0.15);
+  color: #4d3e9e;
+}
+
+.flag--category-mediunidade {
+  background-color: rgba(65, 105, 225, 0.15);
+  color: #3a5db9;
+}
+
+.flag--category-evangelho {
+  background-color: rgba(147, 112, 219, 0.15);
+  color: #7b5eb8;
+}
+
+.flag--category-pratica {
+  background-color: rgba(32, 178, 170, 0.15);
+  color: #168e87;
+}
+
+.flag--category-estudo {
+  background-color: rgba(255, 160, 122, 0.15);
+  color: #e6794a;
+}
+
+/* Grupo de flags */
+.flag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

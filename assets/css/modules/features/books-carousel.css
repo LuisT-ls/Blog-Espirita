@@ -1,0 +1,189 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS do Carrossel de Livros
+   assets/css/modules/features/books-carousel.css
+   Versão: 1.0.0
+*/
+
+/* Container do carrossel */
+.books-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+/* Container interno do carrossel */
+.carousel__container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Faixa de slides */
+.carousel__track {
+  display: flex;
+  transition: transform var(--transition-normal);
+}
+
+/* Slides individuais */
+.carousel__slide {
+  flex-shrink: 0;
+  padding: 0 0.75rem;
+}
+
+/* Navegação do carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  z-index: 2;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn--prev {
+  left: -0.5rem;
+}
+
+.carousel-btn--next {
+  right: -0.5rem;
+}
+
+/* Indicadores */
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel__dot:hover {
+  background-color: var(--color-text-lighter);
+}
+
+.carousel__dot.active {
+  background-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+/* Carrossel específico para livros em destaque */
+.featured-books .carousel__slide {
+  height: 100%;
+}
+
+/* Adaptação para clones em loops infinitos */
+.carousel__slide.clone {
+  pointer-events: none;
+}
+
+/* Estilo para autoplay */
+.carousel--autoplay .carousel-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal),
+    visibility var(--transition-normal), transform var(--transition-fast);
+}
+
+.carousel--autoplay:hover .carousel-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilo para múltiplos slides por vez */
+.carousel--multi {
+  padding: 0 3rem;
+}
+
+/* Carrossel com borda e efeitos */
+.carousel--bordered {
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--color-background-alt);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Estilo de carrossel de livros em grade */
+.carousel--grid .carousel__track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  transition: none;
+}
+
+.carousel--grid .carousel__slide {
+  padding: 0;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .carousel--multi {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .books-carousel {
+    padding: 0 1.5rem;
+  }
+
+  .carousel-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .carousel-btn--prev {
+    left: -0.25rem;
+  }
+
+  .carousel-btn--next {
+    right: -0.25rem;
+  }
+
+  .carousel--multi {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .books-carousel {
+    padding: 0 1rem;
+  }
+
+  .carousel-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .carousel--multi {
+    padding: 0 1.5rem;
+  }
+}

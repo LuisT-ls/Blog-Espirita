@@ -1,0 +1,192 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Acessibilidade
+   assets/css/modules/utils/accessibility.css
+   Versão: 1.0.0
+*/
+
+/* Skip link - Link para pular para o conteúdo principal */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: var(--z-tooltip);
+  text-decoration: none;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Esconder elementos visualmente, mas mantê-los acessíveis para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Mostrar elemento apenas para leitores de tela quando em foco */
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Destaque de foco personalizado */
+:focus {
+  outline: 3px solid rgba(var(--color-primary-rgb), 0.5);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(var(--color-primary-rgb), 0.5);
+  outline-offset: 2px;
+}
+
+/* Remover decorações de links quando não são necessárias visualmente */
+.no-underline {
+  text-decoration: none;
+}
+
+/* Melhorar leitura de textos */
+.readable-text {
+  max-width: 70ch;
+  line-height: 1.6;
+}
+
+/* Aumentar contraste em textos */
+.high-contrast-text {
+  color: var(--color-text-dark, #000);
+  text-shadow: none;
+}
+
+/* Texto alternativo para ícones */
+.icon-text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+/* Classes para ajustar o tamanho do texto */
+.text-size-base {
+  font-size: 1rem !important;
+}
+
+.text-size-large {
+  font-size: 1.25rem !important;
+}
+
+.text-size-larger {
+  font-size: 1.5rem !important;
+}
+
+/* Melhorar espaçamento para leitura */
+.spaced-text {
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+/* Melhorar contraste para elementos focados */
+.focus-contrast:focus {
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.7);
+}
+
+/* Identificar links externos para usuários de leitores de tela */
+.external-link::after {
+  content: ' (link externo)';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Remover animações para usuários que preferem redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-disable {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Melhorar cores para daltônicos */
+.colorblind-friendly {
+  /* Cores otimizadas para diferentes tipos de daltonismo */
+  --cb-blue: #0072b2;
+  --cb-orange: #e69f00;
+  --cb-green: #009e73;
+  --cb-red: #d55e00;
+  --cb-purple: #cc79a7;
+  --cb-yellow: #f0e442;
+}
+
+/* Estilo para links adequados para impressão */
+@media print {
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
+    content: '';
+  }
+}
+
+/* Espaçamento adequado para leitores de tela */
+.screen-reader-spacing {
+  margin: 1em 0;
+}
+
+/* Botões com área de clique maior */
+.accessible-button {
+  padding: 0.75rem 1.25rem;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Marcador de HTML5 para regiões */
+main,
+nav,
+article,
+section,
+aside,
+header,
+footer,
+figure {
+  display: block;
+}

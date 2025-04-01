@@ -1,0 +1,248 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Paginação
+   assets/css/modules/features/pagination.css
+   Versão: 1.0.0
+*/
+
+/* Container de paginação */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+/* Botões de navegação */
+.pagination__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--color-background-alt);
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.pagination__btn:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.pagination__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Números de página */
+.pagination__numbers {
+  display: flex;
+  align-items: center;
+  margin: 0 0.75rem;
+}
+
+.pagination__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.pagination__link:hover {
+  background-color: var(--color-background-alt);
+}
+
+.pagination__link.active {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Reticências */
+.pagination__ellipsis {
+  margin: 0 0.25rem;
+  color: var(--color-text-light);
+}
+
+/* Variações de estilo */
+/* Paginação com bordas arredondadas */
+.pagination--rounded .pagination__btn,
+.pagination--rounded .pagination__link {
+  border-radius: var(--border-radius-full);
+}
+
+/* Paginação com bordas */
+.pagination--bordered .pagination__btn,
+.pagination--bordered .pagination__link {
+  border: 1px solid var(--color-border);
+}
+
+.pagination--bordered .pagination__link.active {
+  border-color: var(--color-primary);
+}
+
+/* Paginação compacta */
+.pagination--compact .pagination__btn,
+.pagination--compact .pagination__link {
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--font-size-sm);
+}
+
+.pagination--compact .pagination__numbers {
+  margin: 0 0.5rem;
+}
+
+/* Paginação com texto */
+.pagination--text .pagination__btn {
+  width: auto;
+  padding: 0 1rem;
+}
+
+.pagination--text .pagination__btn-prev::before {
+  content: 'Anterior';
+  margin-left: 0.35rem;
+}
+
+.pagination--text .pagination__btn-next::after {
+  content: 'Próximo';
+  margin-right: 0.35rem;
+}
+
+/* Paginação com sombras */
+.pagination--shadow .pagination__btn,
+.pagination--shadow .pagination__link {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Paginação com ícones simples */
+.pagination--simple {
+  justify-content: space-between;
+}
+
+.pagination--simple .pagination__numbers {
+  display: none;
+}
+
+.pagination--simple .pagination__btn {
+  width: auto;
+  padding: 0 1.25rem;
+  border-radius: var(--border-radius-full);
+}
+
+.pagination--simple .pagination__btn-prev::before {
+  content: '← Anterior';
+}
+
+.pagination--simple .pagination__btn-next::after {
+  content: 'Próximo →';
+}
+
+/* Paginação com scroll infinito */
+.pagination--infinite {
+  justify-content: center;
+}
+
+.pagination--infinite .pagination__btn,
+.pagination--infinite .pagination__numbers {
+  display: none;
+}
+
+.pagination--infinite .pagination__load-more {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-background-alt);
+  color: var(--color-text);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.pagination--infinite .pagination__load-more:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.pagination--infinite .pagination__loading {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination--infinite .pagination__loading-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(var(--color-primary-rgb), 0.3);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+.pagination--infinite.loading .pagination__load-more {
+  display: none;
+}
+
+.pagination--infinite.loading .pagination__loading {
+  display: flex;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pagination {
+    margin: 2rem 0;
+  }
+
+  .pagination__link:not(.active):not(:nth-child(2)):not(:nth-last-child(2)) {
+    display: none;
+  }
+
+  .pagination--text .pagination__btn {
+    padding: 0 0.75rem;
+  }
+
+  .pagination--text .pagination__btn-prev::before,
+  .pagination--text .pagination__btn-next::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .pagination {
+    margin: 1.5rem 0;
+  }
+
+  .pagination__btn,
+  .pagination__link {
+    width: 2rem;
+    height: 2rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .pagination__ellipsis {
+    margin: 0 0.1rem;
+  }
+
+  .pagination--simple .pagination__btn {
+    padding: 0 0.75rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .pagination--simple .pagination__btn-prev::before {
+    content: 'Anterior';
+  }
+
+  .pagination--simple .pagination__btn-next::after {
+    content: 'Próximo';
+  }
+}

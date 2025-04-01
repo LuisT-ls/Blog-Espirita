@@ -1,0 +1,245 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS da Newsletter
+   assets/css/modules/features/newsletter.css
+   Versão: 1.0.0
+*/
+
+/* Seção de newsletter */
+.newsletter {
+  background-color: var(--color-background-alt);
+  padding: 4rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.newsletter__content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.newsletter__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Formulário da newsletter */
+.newsletter__form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter__form .input-group {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.newsletter__form .input {
+  flex-grow: 1;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: none;
+  padding: 0.75rem 1.25rem;
+  font-size: var(--font-size-base);
+}
+
+.newsletter__form .btn {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: 0.75rem 1.5rem;
+}
+
+.newsletter__form .checkbox {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+/* Mensagem de confirmação */
+.newsletter__success {
+  display: none;
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 1.5rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.newsletter__success.show {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Mensagem de erro */
+.newsletter__error {
+  display: none;
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 1.5rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.newsletter__error.show {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Variações de estilo */
+/* Newsletter com imagem de fundo */
+.newsletter--bg-image {
+  background-image: linear-gradient(
+      rgba(var(--color-primary-rgb), 0.85),
+      rgba(var(--color-primary-rgb), 0.85)
+    ),
+    url('../img/newsletter-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border: none;
+}
+
+.newsletter--bg-image .newsletter__title,
+.newsletter--bg-image .newsletter__description {
+  color: white;
+}
+
+.newsletter--bg-image .newsletter__form .checkbox {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.newsletter--bg-image .newsletter__form .checkbox a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Newsletter com gradiente */
+.newsletter--gradient {
+  background: var(--gradient-spiritual);
+  color: white;
+  border: none;
+}
+
+.newsletter--gradient .newsletter__title,
+.newsletter--gradient .newsletter__description {
+  color: white;
+}
+
+.newsletter--gradient .newsletter__form .checkbox {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.newsletter--gradient .newsletter__form .checkbox a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Newsletter com destaque */
+.newsletter--featured {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+  margin: 3rem auto;
+  max-width: var(--container-max-width);
+  border: none;
+}
+
+/* Newsletter horizontal */
+.newsletter--horizontal .newsletter__content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  max-width: 100%;
+}
+
+.newsletter--horizontal .newsletter__info {
+  flex: 1;
+  padding-right: 3rem;
+}
+
+.newsletter--horizontal .newsletter__form {
+  flex: 1;
+  margin: 0;
+}
+
+/* Ícone de newsletter */
+.newsletter__icon {
+  font-size: 3.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .newsletter {
+    padding: 3rem 0;
+  }
+
+  .newsletter__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .newsletter__description {
+    font-size: var(--font-size-base);
+  }
+
+  .newsletter--horizontal .newsletter__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter--horizontal .newsletter__info {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter--featured {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletter {
+    padding: 2.5rem 0;
+  }
+
+  .newsletter__form .input-group {
+    flex-direction: column;
+  }
+
+  .newsletter__form .input {
+    border-radius: var(--border-radius);
+    border-right: 1px solid var(--color-border);
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter__form .btn {
+    border-radius: var(--border-radius);
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .newsletter {
+    padding: 2rem 0;
+  }
+
+  .newsletter__title {
+    font-size: var(--font-size-xl);
+  }
+
+  .newsletter--featured {
+    padding: 1.5rem;
+    margin: 2rem auto;
+  }
+}

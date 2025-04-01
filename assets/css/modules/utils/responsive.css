@@ -1,0 +1,339 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Responsividade
+   assets/css/modules/utils/responsive.css
+   Versão: 1.0.0
+*/
+
+/* Classes de utilitário para responsividade */
+
+/* Esconder em dispositivos específicos */
+.hide-xs {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .hide-xs {
+    display: initial;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-sm {
+    display: initial;
+  }
+
+  .hide-md {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .hide-md {
+    display: initial;
+  }
+
+  .hide-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hide-lg {
+    display: initial;
+  }
+
+  .hide-xl {
+    display: none;
+  }
+}
+
+/* Mostrar apenas em dispositivos específicos */
+.show-xs-only {
+  display: initial;
+}
+
+.show-sm-only,
+.show-md-only,
+.show-lg-only,
+.show-xl-only {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .show-xs-only {
+    display: none;
+  }
+
+  .show-sm-only {
+    display: initial;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-sm-only {
+    display: none;
+  }
+
+  .show-md-only {
+    display: initial;
+  }
+}
+
+@media (min-width: 992px) {
+  .show-md-only {
+    display: none;
+  }
+
+  .show-lg-only {
+    display: initial;
+  }
+}
+
+@media (min-width: 1200px) {
+  .show-lg-only {
+    display: none;
+  }
+
+  .show-xl-only {
+    display: initial;
+  }
+}
+
+/* Alinhamento responsivo */
+.text-center-xs {
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .text-center-sm {
+    text-align: center;
+  }
+
+  .text-left-sm {
+    text-align: left;
+  }
+
+  .text-right-sm {
+    text-align: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-center-md {
+    text-align: center;
+  }
+
+  .text-left-md {
+    text-align: left;
+  }
+
+  .text-right-md {
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-center-lg {
+    text-align: center;
+  }
+
+  .text-left-lg {
+    text-align: left;
+  }
+
+  .text-right-lg {
+    text-align: right;
+  }
+}
+
+/* Flexbox responsivo */
+.flex-column-xs {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 576px) {
+  .flex-row-sm {
+    flex-direction: row;
+  }
+
+  .flex-column-sm {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-row-md {
+    flex-direction: row;
+  }
+
+  .flex-column-md {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .flex-row-lg {
+    flex-direction: row;
+  }
+
+  .flex-column-lg {
+    flex-direction: column;
+  }
+}
+
+/* Ordem de elementos */
+@media (max-width: 767px) {
+  .order-first-xs {
+    order: -1;
+  }
+
+  .order-last-xs {
+    order: 999;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .order-first-sm {
+    order: -1;
+  }
+
+  .order-last-sm {
+    order: 999;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .order-first-md {
+    order: -1;
+  }
+
+  .order-last-md {
+    order: 999;
+  }
+}
+
+@media (min-width: 992px) {
+  .order-first-lg {
+    order: -1;
+  }
+
+  .order-last-lg {
+    order: 999;
+  }
+}
+
+/* Margens responsivas */
+@media (max-width: 767px) {
+  .mt-xs {
+    margin-top: var(--spacing-md);
+  }
+
+  .mb-xs {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+@media (min-width: 768px) {
+  .mt-md {
+    margin-top: var(--spacing-md);
+  }
+
+  .mb-md {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* Largura de colunas responsivas */
+.col-full-xs {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .col-half-sm {
+    width: 50%;
+  }
+
+  .col-full-sm {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-third-md {
+    width: 33.333%;
+  }
+
+  .col-half-md {
+    width: 50%;
+  }
+
+  .col-full-md {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-quarter-lg {
+    width: 25%;
+  }
+
+  .col-third-lg {
+    width: 33.333%;
+  }
+
+  .col-half-lg {
+    width: 50%;
+  }
+}
+
+/* Grid responsivo simplificado */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 576px) {
+  .responsive-grid-sm-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-grid-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .responsive-grid-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .responsive-grid-lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .responsive-grid-lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tamanho de fonte responsiva */
+@media (max-width: 576px) {
+  .text-smaller-xs {
+    font-size: 0.875em;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-larger-md {
+    font-size: 1.125em;
+  }
+}

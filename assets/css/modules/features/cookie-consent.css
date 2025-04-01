@@ -1,0 +1,183 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS do Aviso de Cookies
+   assets/css/modules/features/cookie-consent.css
+   Versão: 1.0.0
+*/
+
+/* Container do aviso de cookies */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 0;
+  z-index: var(--z-fixed);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+}
+
+.cookie-consent.show {
+  transform: translateY(0);
+}
+
+/* Conteúdo do aviso */
+.cookie-consent__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cookie-consent__content p {
+  flex: 1;
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.cookie-consent__content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Ações do aviso */
+.cookie-consent__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Variações de estilo */
+/* Aviso compacto */
+.cookie-consent--compact {
+  padding: 0.75rem 0;
+}
+
+.cookie-consent--compact .cookie-consent__content p {
+  font-size: var(--font-size-sm);
+}
+
+.cookie-consent--compact .btn {
+  padding: 0.35rem 0.75rem;
+  font-size: var(--font-size-xs);
+}
+
+/* Aviso detalhado */
+.cookie-consent--detailed {
+  padding: 1.5rem 0;
+}
+
+.cookie-consent--detailed .cookie-consent__content {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.cookie-consent--detailed .cookie-consent__actions {
+  align-self: flex-end;
+}
+
+/* Aviso no topo */
+.cookie-consent--top {
+  top: 0;
+  bottom: auto;
+  transform: translateY(-100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-consent--top.show {
+  transform: translateY(0);
+}
+
+/* Aviso flutuante */
+.cookie-consent--floating {
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: transform var(--transition-normal),
+    opacity var(--transition-normal);
+}
+
+.cookie-consent--floating.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Configurações de cookies */
+.cookie-settings {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.cookie-settings.show {
+  display: block;
+}
+
+.cookie-settings__group {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.cookie-settings__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.cookie-settings__title {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+
+.cookie-settings__description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cookie-consent__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cookie-consent__actions {
+    align-self: flex-end;
+  }
+
+  .cookie-consent--floating {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cookie-consent__actions {
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  .cookie-consent__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cookie-consent--floating {
+    max-width: 100%;
+  }
+}

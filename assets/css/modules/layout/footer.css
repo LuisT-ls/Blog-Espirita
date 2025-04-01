@@ -1,0 +1,501 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS do Rodapé - Versão Melhorada
+   assets/css/modules/layout/footer.css
+   Versão: 1.0.0
+*/
+
+.footer {
+  background: var(--gradient-spiritual);
+  color: white;
+  padding-top: 5rem;
+  margin-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz espiritual no fundo */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../../img/spiritual-pattern.svg');
+  background-size: cover;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 2;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 4rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Área da marca */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Efeito de aura ao redor do logo */
+.footer__brand::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  width: 12rem;
+  height: 12rem;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.footer__logo {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.footer__tagline {
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.8rem;
+  font-style: italic;
+}
+
+.footer__description {
+  margin-bottom: 2rem;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 85%;
+}
+
+/* Redes sociais no rodapé */
+.footer__social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all var(--transition-normal);
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover::before {
+  opacity: 1;
+}
+
+/* Links do rodapé */
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.footer__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__heading {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: white;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.footer__heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__menu a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0;
+  position: relative;
+  width: fit-content;
+}
+
+.footer__menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width var(--transition-normal);
+}
+
+.footer__menu a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footer__menu a:hover::after {
+  width: 100%;
+}
+
+.footer__menu a i {
+  margin-right: 0.75rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.footer__menu a:hover i {
+  opacity: 1;
+}
+
+/* Parte inferior do rodapé */
+.footer__bottom {
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.footer__copyright {
+  margin: 0;
+}
+
+.footer__credits {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer__credits .fa-heart {
+  color: #ff6b6b;
+  animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.5));
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Newsletter no rodapé */
+.footer-newsletter {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-newsletter__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.footer-newsletter__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-newsletter__description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.footer-newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-newsletter__form .input-group {
+  display: flex;
+}
+
+.footer-newsletter__form .input {
+  flex-grow: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  padding: 1rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+.footer-newsletter__form .input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-newsletter__form .btn {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  background-color: white;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  padding: 1rem 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.footer-newsletter__form .btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-newsletter__form .checkbox__text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-size-sm);
+}
+
+.footer-newsletter__form .checkbox__text a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Decoração do rodapé */
+.footer__decoration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: url('../../../img/spiritual-light.svg');
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  opacity: 0.07;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .footer-newsletter__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding-top: 4rem;
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer__brand {
+    grid-column: span 2;
+  }
+
+  .footer__brand::before {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .footer__links {
+    grid-column: span 2;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__decoration {
+    opacity: 0.05;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 3.5rem;
+  }
+
+  .footer__content {
+    gap: 2.5rem;
+  }
+
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer__group:last-child {
+    grid-column: span 2;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-newsletter {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding-top: 3rem;
+    margin-top: 4rem;
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer__brand {
+    grid-column: span 1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__description {
+    max-width: 100%;
+  }
+
+  .footer__brand::before {
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer__links {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer__group {
+    grid-column: span 1 !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__heading {
+    text-align: center;
+  }
+
+  .footer__heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+
+  .footer__menu {
+    align-items: center;
+  }
+
+  .footer__menu a:hover {
+    transform: translateY(-3px);
+  }
+
+  .footer-newsletter {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}

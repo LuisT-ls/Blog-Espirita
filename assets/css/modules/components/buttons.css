@@ -1,0 +1,314 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Botões
+   Versão: 1.0.0
+*/
+
+/* Classe base para botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 1;
+  text-align: center;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  gap: 0.5rem;
+}
+
+/* Efeito de onda ao clicar */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(30, 30);
+    opacity: 0;
+  }
+}
+
+/* Botão primário */
+.btn--primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botão secundário */
+.btn--secondary {
+  background: var(--gradient-secondary);
+  color: white;
+  border: none;
+}
+
+.btn--secondary:hover {
+  background: var(--color-secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--secondary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botão de contorno */
+.btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid currentColor;
+}
+
+.btn--outline:hover {
+  background: rgba(var(--color-primary-rgb), 0.05);
+  transform: translateY(-2px);
+}
+
+.btn--outline:active {
+  transform: translateY(0);
+}
+
+/* Botão de contorno com cor secundária */
+.btn--outline-secondary {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 2px solid currentColor;
+}
+
+.btn--outline-secondary:hover {
+  background: rgba(var(--color-secondary-rgb), 0.05);
+  transform: translateY(-2px);
+}
+
+/* Botão de contorno com cor de acento */
+.btn--outline-accent {
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid currentColor;
+}
+
+.btn--outline-accent:hover {
+  background: rgba(var(--color-accent-rgb), 0.05);
+  transform: translateY(-2px);
+}
+
+/* Botão de texto */
+.btn--text {
+  background: transparent;
+  color: var(--color-primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+}
+
+.btn--text:hover {
+  background: rgba(var(--color-primary-rgb), 0.05);
+}
+
+/* Botão com ícone */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-primary);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-icon:active {
+  transform: translateY(0);
+}
+
+/* Botão pequeno */
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+}
+
+/* Botão grande */
+.btn--large {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-lg);
+}
+
+/* Botão com largura total */
+.btn--full {
+  width: 100%;
+}
+
+/* Botão arredondado */
+.btn--rounded {
+  border-radius: var(--border-radius-full);
+}
+
+/* Botão desabilitado */
+.btn:disabled,
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Botão com ícone à esquerda */
+.btn--icon-left {
+  flex-direction: row;
+}
+
+.btn--icon-left i,
+.btn--icon-left svg {
+  margin-right: 0.5rem;
+}
+
+/* Botão com ícone à direita */
+.btn--icon-right {
+  flex-direction: row-reverse;
+}
+
+.btn--icon-right i,
+.btn--icon-right svg {
+  margin-left: 0.5rem;
+}
+
+/* Grupo de botões */
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-group--vertical {
+  flex-direction: column;
+}
+
+/* Botões de paginação */
+.pagination__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--color-background-alt);
+  color: var(--color-text);
+  transition: all var(--transition-normal);
+}
+
+.pagination__btn:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.pagination__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botões de carousel */
+.carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--color-primary);
+  box-shadow: var(--shadow);
+  transition: all var(--transition-normal);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-btn--prev {
+  left: -1.5rem;
+}
+
+.carousel-btn--next {
+  right: -1.5rem;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .btn--large {
+    padding: 0.8rem 1.6rem;
+  }
+
+  .carousel-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .carousel-btn--prev {
+    left: -0.5rem;
+  }
+
+  .carousel-btn--next {
+    right: -0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .btn--full-mobile {
+    width: 100%;
+  }
+}

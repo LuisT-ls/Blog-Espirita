@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pesquise conteúdo sobre espiritismo, livros, artigos e estudos - Luz Interior Portal Espírita"
+    />
+    <title>Busca | Luz Interior - Portal Espírita</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="../assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../pages/css/busca.css" />
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="../index.html" class="header__logo">
+            <h1>Luz Interior</h1>
+            <span class="header__tagline">Portal Espírita</span>
+          </a>
+
+          <button class="header__menu-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li><a href="../index.html">Início</a></li>
+              <li><a href="./biblioteca.html">Biblioteca</a></li>
+              <li><a href="./artigos.html">Artigos</a></li>
+              <li><a href="./estudos.html">Estudos</a></li>
+              <li><a href="./contato.html">Contato</a></li>
+            </ul>
+
+            <div class="header__actions">
+              <button
+                class="theme-toggle"
+                aria-label="Alternar tema claro/escuro"
+              >
+                <i class="fas fa-sun theme-toggle__icon--light"></i>
+                <i class="fas fa-moon theme-toggle__icon--dark"></i>
+              </button>
+              <a
+                href="./busca.html"
+                class="btn-icon active"
+                aria-label="Buscar"
+              >
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Hero -->
+    <section class="search-hero">
+      <div class="container">
+        <div class="search-hero__content">
+          <h1 class="search-hero__title">Busca</h1>
+          <p class="search-hero__subtitle">
+            Encontre conteúdos sobre espiritismo, livros, artigos, estudos e
+            mais
+          </p>
+
+          <form class="search-form">
+            <div class="search-form__input-group">
+              <input
+                type="text"
+                class="search-form__input"
+                placeholder="O que você procura?"
+                aria-label="Termo de busca"
+                autofocus
+              />
+              <button
+                type="submit"
+                class="search-form__button"
+                aria-label="Buscar"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+
+            <div class="search-form__options">
+              <label class="radio">
+                <input type="radio" name="search-scope" value="all" checked />
+                <span class="radio__text">Todo o conteúdo</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="search-scope" value="livros" />
+                <span class="radio__text">Livros</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="search-scope" value="artigos" />
+                <span class="radio__text">Artigos</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="search-scope" value="estudos" />
+                <span class="radio__text">Estudos</span>
+              </label>
+            </div>
+          </form>
+
+          <div class="search-trends">
+            <h3 class="search-trends__title">Buscas populares:</h3>
+            <div class="search-trends__tags">
+              <a href="?q=reencarnação" class="search-trends__tag"
+                >reencarnação</a
+              >
+              <a href="?q=mediunidade" class="search-trends__tag"
+                >mediunidade</a
+              >
+              <a href="?q=evangelho+no+lar" class="search-trends__tag"
+                >evangelho no lar</a
+              >
+              <a href="?q=obsessão" class="search-trends__tag">obsessão</a>
+              <a href="?q=reforma+íntima" class="search-trends__tag"
+                >reforma íntima</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="section search-results">
+      <div class="container">
+        <!-- Estado de carregamento -->
+        <div class="search-loading" style="display: none">
+          <div class="loading">
+            <div class="loading__spinner"></div>
+          </div>
+          <p class="loading__text">Buscando resultados...</p>
+        </div>
+
+        <!-- Estado sem resultados -->
+        <div class="search-empty" style="display: none">
+          <div class="search-empty__icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h2 class="search-empty__title">Nenhum resultado encontrado</h2>
+          <p class="search-empty__text">
+            Não encontramos nenhum conteúdo para o termo buscado. Tente
+            novamente com palavras diferentes ou verifique a ortografia.
+          </p>
+          <div class="search-empty__suggestions">
+            <h3 class="search-empty__suggestions-title">Sugestões:</h3>
+            <ul class="search-empty__suggestions-list">
+              <li>Verifique a ortografia das palavras</li>
+              <li>Use termos mais gerais</li>
+              <li>Use menos palavras na busca</li>
+              <li>Tente sinônimos</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Resultados encontrados (inicialmente ocultos, mostrados via JavaScript) -->
+        <div class="search-found" style="display: none">
+          <div class="search-meta">
+            <p class="search-meta__count">
+              Encontramos <span id="results-count">42</span> resultados para
+              "<span id="search-term">reencarnação</span>"
+            </p>
+
+            <div class="search-meta__filters">
+              <label for="search-sort" class="search-meta__label"
+                >Ordenar por:</label
+              >
+              <select id="search-sort" class="search-meta__select">
+                <option value="relevance">Relevância</option>
+                <option value="recent">Mais recentes</option>
+                <option value="oldest">Mais antigos</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-categories">
+            <button class="search-category-btn active" data-category="all">
+              Todos
+            </button>
+            <button class="search-category-btn" data-category="livros">
+              Livros <span>(15)</span>
+            </button>
+            <button class="search-category-btn" data-category="artigos">
+              Artigos <span>(18)</span>
+            </button>
+            <button class="search-category-btn" data-category="estudos">
+              Estudos <span>(9)</span>
+            </button>
+          </div>
+
+          <div class="search-results-list">
+            <!-- Exemplo de resultado - livro -->
+            <div class="search-result" data-category="livros">
+              <div class="search-result__type">
+                <i class="fas fa-book"></i>
+                <span>Livro</span>
+              </div>
+              <div class="search-result__content">
+                <h3 class="search-result__title">
+                  <a href="./biblioteca/livro-dos-espiritos.html"
+                    >O Livro dos Espíritos</a
+                  >
+                </h3>
+                <p class="search-result__excerpt">
+                  ... <mark>reencarnação</mark> é um dos princípios fundamentais
+                  da doutrina espírita, representando o meio pelo qual os
+                  espíritos progridem através de múltiplas existências...
+                </p>
+                <div class="search-result__meta">
+                  <span class="search-result__author">Allan Kardec</span>
+                  <span class="search-result__divider">•</span>
+                  <span class="search-result__category">Codificação</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exemplo de resultado - artigo -->
+            <div class="search-result" data-category="artigos">
+              <div class="search-result__type">
+                <i class="fas fa-file-alt"></i>
+                <span>Artigo</span>
+              </div>
+              <div class="search-result__content">
+                <h3 class="search-result__title">
+                  <a href="./artigos/reencarnacao-e-karma.html"
+                    >Reencarnação e a Lei de Causa e Efeito</a
+                  >
+                </h3>
+                <p class="search-result__excerpt">
+                  Compreenda como o princípio do karma se relaciona com a visão
+                  espírita da <mark>reencarnação</mark> e da evolução
+                  espiritual. A <mark>reencarnação</mark> permite que o espírito
+                  aprenda através de múltiplas...
+                </p>
+                <div class="search-result__meta">
+                  <span class="search-result__date">12 de março, 2025</span>
+                  <span class="search-result__divider">•</span>
+                  <span class="search-result__category">Doutrina</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exemplo de resultado - estudo -->
+            <div class="search-result" data-category="estudos">
+              <div class="search-result__type">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Estudo</span>
+              </div>
+              <div class="search-result__content">
+                <h3 class="search-result__title">
+                  <a href="./estudos/principios-basicos.html"
+                    >Princípios Básicos do Espiritismo</a
+                  >
+                </h3>
+                <p class="search-result__excerpt">
+                  ... o módulo 3 deste estudo aborda em profundidade o tema da
+                  <mark>reencarnação</mark>, explicando por que este princípio é
+                  fundamental para a compreensão da evolução espiritual e da
+                  justiça divina...
+                </p>
+                <div class="search-result__meta">
+                  <span class="search-result__level">Iniciante</span>
+                  <span class="search-result__divider">•</span>
+                  <span class="search-result__modules">5 módulos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mais resultados seriam adicionados aqui dinamicamente via JavaScript -->
+          </div>
+
+          <!-- Paginação -->
+          <div class="pagination">
+            <button
+              class="pagination__btn pagination__btn--prev"
+              disabled
+              aria-label="Página anterior"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="pagination__numbers">
+              <a href="#" class="pagination__link active">1</a>
+              <a href="#" class="pagination__link">2</a>
+              <a href="#" class="pagination__link">3</a>
+              <a href="#" class="pagination__link">4</a>
+              <span class="pagination__ellipsis">...</span>
+              <a href="#" class="pagination__link">7</a>
+            </div>
+            <button
+              class="pagination__btn pagination__btn--next"
+              aria-label="Próxima página"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search History -->
+    <section class="section section--alt search-history" style="display: none">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Histórico de Buscas</h2>
+          <p class="section__subtitle">Suas pesquisas recentes</p>
+        </header>
+
+        <div class="search-history__list">
+          <div class="search-history__item">
+            <a href="?q=reencarnação" class="search-history__term"
+              >reencarnação</a
+            >
+            <span class="search-history__date">Hoje, 14:30</span>
+            <button
+              class="search-history__remove"
+              aria-label="Remover do histórico"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <div class="search-history__item">
+            <a
+              href="?q=mediunidade+desenvolvimento"
+              class="search-history__term"
+              >mediunidade desenvolvimento</a
+            >
+            <span class="search-history__date">Hoje, 11:15</span>
+            <button
+              class="search-history__remove"
+              aria-label="Remover do histórico"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <div class="search-history__item">
+            <a
+              href="?q=evangelho+segundo+espiritismo"
+              class="search-history__term"
+              >evangelho segundo espiritismo</a
+            >
+            <span class="search-history__date">Ontem, 19:45</span>
+            <button
+              class="search-history__remove"
+              aria-label="Remover do histórico"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="search-history__footer">
+          <button class="btn btn--text search-history__clear">
+            Limpar histórico
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Content -->
+    <section class="section related-content">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Conteúdo Recomendado</h2>
+          <p class="section__subtitle">Com base nos interesses da comunidade</p>
+        </header>
+
+        <div class="related-grid">
+          <!-- Recomendação 1 - Livro -->
+          <div class="related-card">
+            <div class="related-card__image">
+              <img
+                src="../assets/img/books/evangelho-segundo-espiritismo.jpg"
+                alt="O Evangelho Segundo o Espiritismo"
+              />
+            </div>
+            <div class="related-card__content">
+              <span class="related-card__type">Livro</span>
+              <h3 class="related-card__title">
+                O Evangelho Segundo o Espiritismo
+              </h3>
+              <p class="related-card__description">
+                Interpretação dos ensinamentos morais de Jesus à luz da Doutrina
+                Espírita.
+              </p>
+              <a
+                href="./biblioteca/evangelho-segundo-espiritismo.html"
+                class="btn btn--outline btn--small"
+                >Ler agora</a
+              >
+            </div>
+          </div>
+
+          <!-- Recomendação 2 - Artigo -->
+          <div class="related-card">
+            <div class="related-card__image">
+              <img
+                src="../assets/img/articles/reforma-intima.jpg"
+                alt="Reforma Íntima"
+              />
+            </div>
+            <div class="related-card__content">
+              <span class="related-card__type">Artigo</span>
+              <h3 class="related-card__title">
+                Reforma Íntima: O Verdadeiro Caminho da Evolução
+              </h3>
+              <p class="related-card__description">
+                A transformação moral e o autoconhecimento como ferramentas
+                essenciais para o progresso espiritual.
+              </p>
+              <a
+                href="./artigos/reforma-intima.html"
+                class="btn btn--outline btn--small"
+                >Ler agora</a
+              >
+            </div>
+          </div>
+
+          <!-- Recomendação 3 - Estudo -->
+          <div class="related-card">
+            <div class="related-card__image">
+              <img
+                src="../assets/img/estudos/mediunidade.jpg"
+                alt="Estudo de Mediunidade"
+              />
+            </div>
+            <div class="related-card__content">
+              <span class="related-card__type">Estudo</span>
+              <h3 class="related-card__title">
+                Conceitos Básicos de Mediunidade
+              </h3>
+              <p class="related-card__description">
+                Introdução aos conceitos fundamentais da mediunidade, tipos de
+                médiuns e desenvolvimento responsável.
+              </p>
+              <a
+                href="./estudos/conceitos-mediunidade.html"
+                class="btn btn--outline btn--small"
+                >Ler agora</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter__content">
+          <h2 class="newsletter__title">Receba atualizações espíritas</h2>
+          <p class="newsletter__description">
+            Assine nossa newsletter e receba novidades, artigos e atualizações
+            do portal.
+          </p>
+
+          <form class="newsletter__form">
+            <div class="input-group">
+              <input
+                type="email"
+                class="input"
+                placeholder="Seu melhor e-mail"
+                required
+              />
+              <button type="submit" class="btn btn--primary">Assinar</button>
+            </div>
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span class="checkbox__text"
+                >Concordo com a
+                <a href="./privacy.html">Política de Privacidade</a></span
+              >
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h2 class="footer__logo">Luz Interior</h2>
+            <p class="footer__tagline">Portal Espírita</p>
+            <p class="footer__description">
+              Divulgando a doutrina espírita através de conteúdo de qualidade e
+              acessível a todos.
+            </p>
+
+            <div class="footer__social">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Spotify">
+                <i class="fab fa-spotify"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__group">
+              <h3 class="footer__heading">Navegue</h3>
+              <ul class="footer__menu">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="./biblioteca.html">Biblioteca</a></li>
+                <li><a href="./artigos.html">Artigos</a></li>
+                <li><a href="./estudos.html">Estudos</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Recursos</h3>
+              <ul class="footer__menu">
+                <li><a href="./biblioteca.html">Livros PDF</a></li>
+                <li><a href="./estudos.html">Roteiros de Estudo</a></li>
+                <li><a href="./audio.html">Áudios</a></li>
+                <li><a href="./videos.html">Vídeos</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Institucional</h3>
+              <ul class="footer__menu">
+                <li><a href="./sobre.html">Sobre Nós</a></li>
+                <li><a href="./privacy.html">Política de Privacidade</a></li>
+                <li><a href="./terms-of-service.html">Termos de Uso</a></li>
+                <li><a href="./contato.html">Fale Conosco</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2025 Luz Interior - Portal Espírita. Todos os direitos
+            reservados.
+          </p>
+          <p class="footer__credits">
+            Desenvolvido com <i class="fas fa-heart"></i> e boas vibrações
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/modules/busca.js" type="module"></script>
+  </body>
+</html>

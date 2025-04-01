@@ -1,0 +1,172 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS do Alternador de Tema
+   assets/css/modules/components/theme-toggle.css
+   Versão: 1.0.0
+*/
+
+/* Botão de alternância de tema */
+.theme-toggle {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast),
+    transform var(--transition-fast);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Ícones de tema */
+.theme-toggle__icon--light,
+.theme-toggle__icon--dark {
+  position: absolute;
+  font-size: 1.25rem;
+  transition: opacity var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+/* Animação de troca de ícones */
+.theme-toggle__icon--light {
+  opacity: 0;
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.theme-toggle__icon--dark {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+[data-theme='dark'] .theme-toggle__icon--light {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+[data-theme='dark'] .theme-toggle__icon--dark {
+  opacity: 0;
+  transform: translateY(10px) rotate(45deg);
+}
+
+/* Cores dos ícones */
+.theme-toggle__icon--light {
+  color: var(--color-primary);
+}
+
+.theme-toggle__icon--dark {
+  color: var(--color-text);
+}
+
+[data-theme='dark'] .theme-toggle__icon--light {
+  color: #f9d71c;
+}
+
+/* Botão de tema na barra superior */
+.header .theme-toggle {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+/* Botão de tema no rodapé */
+.footer .theme-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0 auto;
+}
+
+/* Alternador com texto */
+.theme-toggle--with-text {
+  width: auto;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+}
+
+.theme-toggle--with-text .theme-toggle__text {
+  margin-left: 0.5rem;
+}
+
+/* Versão estilizada */
+.theme-toggle--styled {
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Versão flutuante */
+.theme-toggle--floating {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-fixed);
+}
+
+.theme-toggle--floating:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.theme-toggle--floating .theme-toggle__icon--light,
+.theme-toggle--floating .theme-toggle__icon--dark {
+  color: white;
+}
+
+/* Alternador de tema em switch */
+.theme-toggle--switch {
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-text-lighter);
+  justify-content: flex-start;
+  padding: 0.25rem;
+  transition: background-color var(--transition-normal);
+}
+
+.theme-toggle--switch::before {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform var(--transition-normal);
+}
+
+[data-theme='dark'] .theme-toggle--switch {
+  background-color: var(--color-primary);
+  justify-content: flex-end;
+}
+
+[data-theme='dark'] .theme-toggle--switch::before {
+  transform: translateX(1.75rem);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .theme-toggle--floating {
+    bottom: 5rem;
+    right: 1.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}

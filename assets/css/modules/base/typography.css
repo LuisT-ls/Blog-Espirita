@@ -1,0 +1,343 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Tipografia
+   assets/css/modules/base/typography.css
+   Versão: 1.0.0
+*/
+
+/* Elementos Base */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+}
+
+/* Cabeçalhos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: 0.75em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+/* Parágrafos */
+p {
+  margin-bottom: 1.5em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Texto Pequeno */
+small,
+.text-small {
+  font-size: var(--font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+/* Peso da Fonte */
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Cores de Texto */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-lighter {
+  color: var(--color-text-lighter);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+/* Alinhamento de Texto */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Transformação de Texto */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Decoração de Texto */
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* Altura de Linha */
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+/* Truncamento de Texto */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-1,
+.line-clamp-2,
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+/* Formatação de Listas */
+ul,
+ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.25em;
+}
+
+ul li,
+ol li {
+  margin-bottom: 0.5em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+/* Citações */
+blockquote {
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+  border-left: 4px solid var(--color-primary);
+  background-color: rgba(var(--color-primary-rgb), 0.05);
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+cite {
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* Código */
+code,
+pre {
+  font-family: monospace;
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-sm);
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Elementos de Texto Diversos */
+mark {
+  background-color: rgba(var(--color-primary-rgb), 0.2);
+  padding: 0.1em 0.3em;
+  border-radius: var(--border-radius-sm);
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  h1 {
+    font-size: calc(var(--font-size-4xl) * 0.9);
+  }
+
+  h2 {
+    font-size: calc(var(--font-size-3xl) * 0.9);
+  }
+
+  h3 {
+    font-size: calc(var(--font-size-2xl) * 0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(var(--font-size-4xl) * 0.8);
+  }
+
+  h2 {
+    font-size: calc(var(--font-size-3xl) * 0.8);
+  }
+
+  h3 {
+    font-size: calc(var(--font-size-2xl) * 0.8);
+  }
+
+  h4 {
+    font-size: calc(var(--font-size-xl) * 0.9);
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: calc(var(--font-size-base) * 0.95);
+  }
+
+  h1 {
+    font-size: calc(var(--font-size-3xl) * 0.9);
+  }
+
+  h2 {
+    font-size: calc(var(--font-size-2xl) * 0.9);
+  }
+
+  h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-lg);
+  }
+}

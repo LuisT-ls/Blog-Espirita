@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Entre em contato com a equipe do Luz Interior - Portal Espírita"
+    />
+    <title>Contato | Luz Interior - Portal Espírita</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="../assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../pages/css/contato.css" />
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="../index.html" class="header__logo">
+            <h1>Luz Interior</h1>
+            <span class="header__tagline">Portal Espírita</span>
+          </a>
+
+          <button class="header__menu-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li><a href="../index.html">Início</a></li>
+              <li><a href="./biblioteca.html">Biblioteca</a></li>
+              <li><a href="./artigos.html">Artigos</a></li>
+              <li><a href="./estudos.html">Estudos</a></li>
+              <li><a href="./contato.html" class="active">Contato</a></li>
+            </ul>
+
+            <div class="header__actions">
+              <button
+                class="theme-toggle"
+                aria-label="Alternar tema claro/escuro"
+              >
+                <i class="fas fa-sun theme-toggle__icon--light"></i>
+                <i class="fas fa-moon theme-toggle__icon--dark"></i>
+              </button>
+              <a href="./busca.html" class="btn-icon" aria-label="Buscar">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Contato</h1>
+        <p class="page-header__subtitle">
+          Entre em contato com nossa equipe para dúvidas, sugestões ou
+          colaborações
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-info">
+          <div class="contact-info__card">
+            <div class="contact-info__icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="contact-info__title">E-mail</h3>
+            <p class="contact-info__text">contato@luzinterior.com.br</p>
+            <a
+              href="mailto:contato@luzinterior.com.br"
+              class="contact-info__link"
+              >Enviar e-mail</a
+            >
+          </div>
+
+          <div class="contact-info__card">
+            <div class="contact-info__icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3 class="contact-info__title">Telefone</h3>
+            <p class="contact-info__text">(11) 9876-5432</p>
+            <a href="tel:+551198765432" class="contact-info__link"
+              >Ligar agora</a
+            >
+          </div>
+
+          <div class="contact-info__card">
+            <div class="contact-info__icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="contact-info__title">Endereço</h3>
+            <p class="contact-info__text">Rua da Luz, 123<br />São Paulo, SP</p>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              class="contact-info__link"
+              >Ver no mapa</a
+            >
+          </div>
+
+          <div class="contact-info__card">
+            <div class="contact-info__icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 class="contact-info__title">Horário</h3>
+            <p class="contact-info__text">Segunda a Sexta<br />9h às 18h</p>
+            <a href="#" class="contact-info__link">Ver mais detalhes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="contact-form-container">
+          <div class="contact-form__info">
+            <h2 class="contact-form__title">Envie sua mensagem</h2>
+            <p class="contact-form__description">
+              Utilize o formulário abaixo para enviar dúvidas, sugestões,
+              comentários ou propostas de colaboração para nossa equipe.
+            </p>
+
+            <div class="contact-form__social">
+              <h3 class="contact-form__social-title">
+                Siga nossas redes sociais
+              </h3>
+              <div class="contact-form__social-icons">
+                <a
+                  href="#"
+                  class="social-icon social-icon--lg"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon social-icon--lg"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon social-icon--lg"
+                  aria-label="YouTube"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon social-icon--lg"
+                  aria-label="Spotify"
+                >
+                  <i class="fab fa-spotify"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form__faq">
+              <h3 class="contact-form__faq-title">Perguntas frequentes</h3>
+              <p class="contact-form__faq-text">
+                Antes de enviar sua mensagem, consulte nossa seção de
+                <a href="./faq.html">perguntas frequentes</a>. Sua dúvida pode
+                já estar respondida.
+              </p>
+            </div>
+          </div>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-group__label">Nome completo</label>
+              <input type="text" id="name" name="name" class="input" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-group__label">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-group__label">Assunto</label>
+              <select id="subject" name="subject" class="select" required>
+                <option value="">Selecione...</option>
+                <option value="duvida">Dúvida sobre a doutrina</option>
+                <option value="sugestao">Sugestão de conteúdo</option>
+                <option value="colaboracao">Proposta de colaboração</option>
+                <option value="problemas">Problemas no site</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-group__label">Mensagem</label>
+              <textarea
+                id="message"
+                name="message"
+                class="textarea"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox">
+                <input type="checkbox" name="privacy" required />
+                <span class="checkbox__text"
+                  >Concordo com a
+                  <a href="./privacy.html">Política de Privacidade</a></span
+                >
+              </label>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn--primary btn--full">
+                Enviar mensagem
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Perguntas Frequentes</h2>
+          <p class="section__subtitle">Respostas para as dúvidas mais comuns</p>
+        </header>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-item__question">
+              <h3>Como posso colaborar com o portal?</h3>
+              <button class="faq-item__toggle" aria-label="Abrir resposta">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="faq-item__answer">
+              <p>
+                Você pode colaborar de diversas formas: enviando artigos,
+                compartilhando conhecimentos, divulgando nosso portal, fazendo
+                doações ou oferecendo serviços voluntários. Entre em contato
+                através do formulário acima indicando sua proposta de
+                colaboração.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item__question">
+              <h3>Os livros disponíveis podem ser baixados gratuitamente?</h3>
+              <button class="faq-item__toggle" aria-label="Abrir resposta">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="faq-item__answer">
+              <p>
+                Sim, todos os livros disponíveis em nossa biblioteca digital são
+                gratuitos. Disponibilizamos apenas obras que estão em domínio
+                público ou que possuímos autorização dos detentores dos direitos
+                autorais para distribuição gratuita.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item__question">
+              <h3>Como posso receber atualizações do portal?</h3>
+              <button class="faq-item__toggle" aria-label="Abrir resposta">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="faq-item__answer">
+              <p>
+                Você pode assinar nossa newsletter no rodapé da página inicial
+                ou nas seções específicas de artigos e estudos. Também
+                recomendamos seguir nossas redes sociais onde compartilhamos
+                todas as atualizações do portal.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item__question">
+              <h3>Posso compartilhar o conteúdo do portal?</h3>
+              <button class="faq-item__toggle" aria-label="Abrir resposta">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="faq-item__answer">
+              <p>
+                Sim, você pode compartilhar nosso conteúdo desde que cite a
+                fonte e não utilize para fins comerciais. Todos os artigos
+                possuem botões de compartilhamento para facilitar a divulgação
+                em redes sociais.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item__question">
+              <h3>Vocês oferecem atendimento espiritual online?</h3>
+              <button class="faq-item__toggle" aria-label="Abrir resposta">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="faq-item__answer">
+              <p>
+                Não oferecemos atendimento espiritual diretamente pelo portal.
+                Nosso objetivo é fornecer conteúdo para estudo e reflexão. Para
+                atendimento espiritual, recomendamos procurar um centro espírita
+                próximo à sua localidade.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__footer">
+          <a href="./faq.html" class="btn btn--outline"
+            >Ver todas as perguntas frequentes</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter__content">
+          <h2 class="newsletter__title">Receba nossas atualizações</h2>
+          <p class="newsletter__description">
+            Assine nossa newsletter e receba novidades, artigos e atualizações
+            do portal.
+          </p>
+
+          <form class="newsletter__form">
+            <div class="input-group">
+              <input
+                type="email"
+                class="input"
+                placeholder="Seu melhor e-mail"
+                required
+              />
+              <button type="submit" class="btn btn--primary">Assinar</button>
+            </div>
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span class="checkbox__text"
+                >Concordo com a
+                <a href="./privacy.html">Política de Privacidade</a></span
+              >
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h2 class="footer__logo">Luz Interior</h2>
+            <p class="footer__tagline">Portal Espírita</p>
+            <p class="footer__description">
+              Divulgando a doutrina espírita através de conteúdo de qualidade e
+              acessível a todos.
+            </p>
+
+            <div class="footer__social">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Spotify">
+                <i class="fab fa-spotify"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__group">
+              <h3 class="footer__heading">Navegue</h3>
+              <ul class="footer__menu">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="./biblioteca.html">Biblioteca</a></li>
+                <li><a href="./artigos.html">Artigos</a></li>
+                <li><a href="./estudos.html">Estudos</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Recursos</h3>
+              <ul class="footer__menu">
+                <li><a href="./biblioteca.html">Livros PDF</a></li>
+                <li><a href="./estudos.html">Roteiros de Estudo</a></li>
+                <li><a href="./audio.html">Áudios</a></li>
+                <li><a href="./videos.html">Vídeos</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Institucional</h3>
+              <ul class="footer__menu">
+                <li><a href="./sobre.html">Sobre Nós</a></li>
+                <li><a href="./privacy.html">Política de Privacidade</a></li>
+                <li><a href="./terms-of-service.html">Termos de Uso</a></li>
+                <li><a href="./contato.html">Fale Conosco</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2025 Luz Interior - Portal Espírita. Todos os direitos
+            reservados.
+          </p>
+          <p class="footer__credits">
+            Desenvolvido com <i class="fas fa-heart"></i> e boas vibrações
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/modules/contato.js" type="module"></script>
+  </body>
+</html>

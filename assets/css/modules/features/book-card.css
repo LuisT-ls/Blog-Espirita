@@ -1,0 +1,301 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS para Cards de Livros
+   Versão: 1.0.0
+*/
+
+/* Card de livro base */
+.book-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+  margin-bottom: 1.5rem;
+  height: 100%;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Capa do livro */
+.book-card__cover {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  background-color: var(--color-background-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.book-card:hover .book-card__cover img {
+  transform: scale(1.05);
+}
+
+/* Overlay da capa */
+.book-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.book-card:hover .book-card__overlay {
+  opacity: 1;
+}
+
+.book-card__overlay .btn {
+  margin-bottom: 0.5rem;
+  transform: translateY(20px);
+  transition: transform var(--transition-normal) 0.1s;
+}
+
+.book-card__overlay .btn-icon {
+  background-color: white;
+  color: var(--color-primary);
+  transform: translateY(20px);
+  transition: transform var(--transition-normal) 0.2s;
+}
+
+.book-card:hover .book-card__overlay .btn,
+.book-card:hover .book-card__overlay .btn-icon {
+  transform: translateY(0);
+}
+
+/* Informações do livro */
+.book-card__info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.book-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.book-card__author {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+}
+
+.book-card__category {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.book-card__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-lighter);
+}
+
+.book-card__year {
+  display: flex;
+  align-items: center;
+}
+
+.book-card__year::before {
+  content: '\f073';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 0.35rem;
+  font-size: 0.9em;
+}
+
+.book-card__downloads {
+  display: flex;
+  align-items: center;
+}
+
+.book-card__downloads i {
+  margin-right: 0.35rem;
+}
+
+/* Variações de layout */
+/* Card horizontal */
+.book-card--horizontal {
+  flex-direction: row;
+  height: 180px;
+}
+
+.book-card--horizontal .book-card__cover {
+  width: 120px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.book-card--horizontal .book-card__info {
+  flex-grow: 1;
+}
+
+/* Card destacado */
+.book-card--featured {
+  border: 2px solid var(--color-primary-light);
+  background: linear-gradient(
+    to bottom right,
+    rgba(var(--color-primary-rgb), 0.05),
+    transparent
+  );
+}
+
+.book-card--featured::before {
+  content: 'Destaque';
+  position: absolute;
+  top: 1rem;
+  right: -2.5rem;
+  background: var(--color-primary);
+  color: white;
+  padding: 0.25rem 3rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+/* Grid de livros */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Lista de livros */
+.books-list .book-card {
+  margin-bottom: 1.5rem;
+}
+
+/* Carrossel de livros */
+.books-carousel {
+  position: relative;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.books-carousel .book-card {
+  margin: 0 0.75rem;
+}
+
+/* Estado vazio */
+.books-empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--color-text-light);
+}
+
+.books-empty__icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-lighter);
+}
+
+.books-empty__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: 0.5rem;
+}
+
+.books-empty__text {
+  font-size: var(--font-size-base);
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .book-card__cover {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .book-card__cover {
+    height: 250px;
+  }
+
+  .book-card__info {
+    padding: 1rem;
+  }
+
+  .book-card__title {
+    font-size: var(--font-size-base);
+  }
+
+  .book-card__author {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 576px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .book-card__cover {
+    height: 220px;
+  }
+
+  .book-card__meta {
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+  }
+
+  .book-card--horizontal {
+    height: 150px;
+  }
+
+  .book-card--horizontal .book-card__cover {
+    width: 100px;
+  }
+}

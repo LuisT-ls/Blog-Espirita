@@ -1,0 +1,159 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Modo Escuro
+   assets/css/modules/utils/darkmode.css
+   Versão: 1.0.0
+*/
+
+/* Definição de cores para o modo escuro */
+[data-theme='dark'] {
+  /* Cores Neutras */
+  --color-background: #121212;
+  --color-background-alt: #1e1e1e;
+  --color-surface: #242424;
+  --color-border: #333333;
+
+  --color-text: #f0f0f0;
+  --color-text-light: #d0d0d0;
+  --color-text-lighter: #a0a0a0;
+
+  /* Sombras mais fortes para o modo escuro */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+    0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+/* Imagens com ajuste de brilho no modo escuro */
+[data-theme='dark'] img:not(.no-dark-filter) {
+  filter: brightness(0.9);
+}
+
+/* Inversão de cores para ícones escuros */
+[data-theme='dark'] .icon-invert {
+  filter: invert(1);
+}
+
+/* Suavização de texto no modo escuro */
+[data-theme='dark'] {
+  font-weight: 300;
+}
+
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  font-weight: 500;
+}
+
+/* Ajustes de contraste para links no modo escuro */
+[data-theme='dark'] a {
+  text-decoration-thickness: 1px;
+}
+
+/* Ajustes para formulários no modo escuro */
+[data-theme='dark'] .input,
+[data-theme='dark'] .textarea,
+[data-theme='dark'] .select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #444;
+}
+
+[data-theme='dark'] .input:focus,
+[data-theme='dark'] .textarea:focus,
+[data-theme='dark'] .select:focus {
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* Ajustes para botões no modo escuro */
+[data-theme='dark'] .btn--outline {
+  border-color: #555;
+}
+
+/* Ajustes para cards no modo escuro */
+[data-theme='dark'] .book-card,
+[data-theme='dark'] .article-card {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Ajustes para efeitos hover no modo escuro */
+[data-theme='dark'] .btn:hover,
+[data-theme='dark'] .header__menu a:hover {
+  filter: brightness(1.2);
+}
+
+/* Ajustes para código no modo escuro */
+[data-theme='dark'] code {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] pre {
+  background-color: #2a2a2a;
+}
+
+/* Ajustes para blockquote no modo escuro */
+[data-theme='dark'] blockquote {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-left-color: var(--color-primary);
+}
+
+/* Ajustes para tabelas no modo escuro */
+[data-theme='dark'] table th {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Ajustes para bordas no modo escuro */
+[data-theme='dark'] .header--bordered,
+[data-theme='dark'] .footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ajustes para o header no modo escuro */
+[data-theme='dark'] .header {
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Ajustes para o footer no modo escuro */
+[data-theme='dark'] .footer {
+  background-color: #181818;
+}
+
+/* Ajustes para acessibilidade no modo escuro */
+[data-theme='dark'] *:focus {
+  outline-color: rgba(var(--color-primary-rgb), 0.7);
+}
+
+/* Adaptação para dispositivos de tinta eletrônica */
+@media (prefers-contrast: more) {
+  [data-theme='dark'] {
+    --color-background: #000;
+    --color-background-alt: #111;
+    --color-surface: #0a0a0a;
+    --color-text: #fff;
+  }
+
+  [data-theme='dark'] * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Ajustes temáticos específicos para modo escuro */
+[data-theme='dark'] .card-spiritual {
+  background: linear-gradient(135deg, #1a1832, #2a2545);
+}
+
+[data-theme='dark'] .quote-section {
+  background: linear-gradient(135deg, #2c2356, #1e1346);
+}

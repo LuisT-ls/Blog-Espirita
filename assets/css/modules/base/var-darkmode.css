@@ -1,0 +1,56 @@
+/* 
+   Luz Interior - Portal Espírita
+   Variáveis do Modo Escuro
+   Versão: 1.0.0
+*/
+
+[data-theme='dark'] {
+  /* Cores Principais */
+  --color-primary: #8a7aed; /* Versão mais clara para o modo escuro */
+  --color-primary-light: #b0a7ea;
+  --color-primary-dark: #5d4ac0;
+
+  --color-secondary: #ffb296; /* Versão mais clara do salmão */
+  --color-secondary-light: #ffd0c0;
+  --color-secondary-dark: #e6855e;
+
+  --color-accent: #3ec8c1; /* Versão mais clara do verde-azulado */
+  --color-accent-light: #7eded8;
+  --color-accent-dark: #16a29b;
+
+  /* Cores Neutras */
+  --color-background: #121212;
+  --color-background-alt: #1e1e1e;
+  --color-surface: #242424;
+  --color-border: #333333;
+
+  --color-text: #f0f0f0;
+  --color-text-light: #d0d0d0;
+  --color-text-lighter: #a0a0a0;
+
+  /* Cores de Estado */
+  --color-success: #66bb6a;
+  --color-success-light: #1b351c;
+  --color-success-dark: #4caf50;
+
+  --color-info: #42a5f5;
+  --color-info-light: #0e2848;
+  --color-info-dark: #2196f3;
+
+  --color-warning: #ffb74d;
+  --color-warning-light: #382a1a;
+  --color-warning-dark: #ff9800;
+
+  --color-error: #ef5350;
+  --color-error-light: #341515;
+  --color-error-dark: #f44336;
+
+  /* Sombras - mais sutis no modo escuro */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+    0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}

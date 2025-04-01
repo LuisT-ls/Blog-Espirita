@@ -1,0 +1,260 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS Principal
+   Versão: 1.0.0
+*/
+
+/* Importação dos módulos base */
+@import url('./modules/base/reset.css');
+@import url('./modules/base/variables.css');
+@import url('./modules/base/typography.css');
+@import url('./modules/base/animations.css');
+@import url('./modules/base/scrollbar.css');
+
+/* Importação dos módulos de layout */
+@import url('./modules/layout/container.css');
+@import url('./modules/layout/header.css');
+@import url('./modules/layout/footer.css');
+@import url('./modules/layout/section.css');
+
+/* Importação dos módulos de componentes */
+@import url('./modules/components/buttons.css');
+@import url('./modules/components/inputs.css');
+@import url('./modules/components/modal.css');
+@import url('./modules/components/notification.css');
+@import url('./modules/components/theme-toggle.css');
+@import url('./modules/components/flags.css');
+@import url('./modules/components/icon.css');
+
+/* Importação dos módulos de features */
+@import url('./modules/features/hero.css');
+@import url('./modules/features/books-carousel.css');
+@import url('./modules/features/book-card.css');
+@import url('./modules/features/article-card.css');
+@import url('./modules/features/quote-section.css');
+@import url('./modules/features/newsletter.css');
+@import url('./modules/features/cookie-consent.css');
+@import url('./modules/features/pagination.css');
+@import url('./modules/features/filter-bar.css');
+
+/* Importação dos módulos de utilidades */
+@import url('./modules/utils/accessibility.css');
+@import url('./modules/utils/darkmode.css');
+@import url('./modules/utils/responsive.css');
+@import url('./modules/utils/spacing.css');
+@import url('./modules/utils/tooltip.css');
+
+/* Estilos globais adicionais */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-primary);
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 100;
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Page header */
+.page-header {
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header__title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.page-header__subtitle {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Estilos para o leitor de PDF */
+.pdf-reader {
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  background-color: var(--color-light);
+}
+
+.pdf-reader__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.pdf-reader__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pdf-reader__page-info {
+  font-size: 0.9rem;
+}
+
+.pdf-reader__download {
+  margin-left: auto;
+}
+
+/* Estado de carregamento */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loading__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(var(--color-primary-rgb), 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mensagem de erro */
+.error-message {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--color-error-light);
+  border: 1px solid var(--color-error);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  color: var(--color-error-dark);
+}
+
+.error-message__icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-error);
+}
+
+.error-message__title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.error-message__text {
+  margin-bottom: 1rem;
+}
+
+/* Media queries globais */
+@media (max-width: 992px) {
+  .page-header {
+    padding: 2.5rem 0;
+  }
+
+  .page-header__title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .page-header {
+    padding: 2rem 0;
+  }
+
+  .page-header__title {
+    font-size: 1.8rem;
+  }
+
+  .pdf-reader {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 1.5rem 0;
+  }
+
+  .page-header__title {
+    font-size: 1.6rem;
+  }
+
+  .pdf-reader__controls {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pdf-reader__download {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigos e reflexões sobre espiritismo, mediunidade e evolução espiritual">
+    <title>Artigos | Luz Interior - Portal Espírita</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico" type="image/x-icon">
+    
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../pages/css/artigos.css">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="../index.html" class="header__logo">
+                    <h1>Luz Interior</h1>
+                    <span class="header__tagline">Portal Espírita</span>
+                </a>
+                
+                <button class="header__menu-toggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="./biblioteca.html">Biblioteca</a></li>
+                        <li><a href="./artigos.html" class="active">Artigos</a></li>
+                        <li><a href="./estudos.html">Estudos</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                    </ul>
+                    
+                    <div class="header__actions">
+                        <button class="theme-toggle" aria-label="Alternar tema claro/escuro">
+                            <i class="fas fa-sun theme-toggle__icon--light"></i>
+                            <i class="fas fa-moon theme-toggle__icon--dark"></i>
+                        </button>
+                        <a href="./busca.html" class="btn-icon" aria-label="Buscar">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">Artigos</h1>
+            <p class="page-header__subtitle">Reflexões e estudos sobre espiritismo, mediunidade e evolução espiritual</p>
+        </div>
+    </section>
+    
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="category-filter" class="filter__label">Categoria</label>
+                    <select id="category-filter" class="filter__select">
+                        <option value="all">Todas as categorias</option>
+                        <option value="doutrina">Doutrina</option>
+                        <option value="mediunidade">Mediunidade</option>
+                        <option value="evangelho">Evangelho</option>
+                        <option value="pratica">Prática</option>
+                        <option value="reflexao">Reflexão</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="author-filter" class="filter__label">Autor</label>
+                    <select id="author-filter" class="filter__select">
+                        <option value="all">Todos os autores</option>
+                        <option value="equipe-editorial">Equipe Editorial</option>
+                        <option value="colaboradores">Colaboradores</option>
+                        <option value="convidados">Convidados</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="search-articles" class="filter__label">Busca</label>
+                    <div class="input-with-icon">
+                        <input type="text" id="search-articles" class="filter__input" placeholder="Buscar artigos...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Article -->
+    <section class="section">
+        <div class="container">
+            <article class="featured-article">
+                <div class="featured-article__image">
+                    <img src="../assets/img/articles/reencarnacao-featured.jpg" alt="Reencarnação: o caminho da evolução espiritual">
+                </div>
+                <div class="featured-article__content">
+                    <span class="flag flag--category-doutrina">Doutrina</span>
+                    <h2 class="featured-article__title">Reencarnação: O Caminho da Evolução Espiritual</h2>
+                    <p class="featured-article__excerpt">A reencarnação é um dos pilares da doutrina espírita e representa a oportunidade divina de crescimento e aperfeiçoamento do espírito através de múltiplas existências. Neste artigo especial, exploramos os fundamentos deste princípio e suas implicações para nossa jornada evolutiva.</p>
+                    <div class="featured-article__meta">
+                        <span class="featured-article__author">
+                            <img src="../assets/img/authors/editor-chefe.jpg" alt="Editor Chefe" class="featured-article__author-img">
+                            <span class="featured-article__author-name">Roberto Carvalho</span>
+                        </span>
+                        <span class="featured-article__date">15 de março, 2025</span>
+                        <span class="featured-article__reading-time">12 min de leitura</span>
+                    </div>
+                    <a href="./artigos/reencarnacao-caminho-evolucao.html" class="btn btn--primary">Ler artigo completo</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- Articles Grid -->
+    <section class="section section--alt">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">Artigos Recentes</h2>
+                <p class="section__subtitle">Conteúdos atualizados para seu desenvolvimento espiritual</p>
+            </header>
+            
+            <div class="articles-grid">
+                <!-- Artigo 1 -->
+                <article class="article-card">
+                    <a href="./artigos/reencarnacao-e-karma.html" class="article-card__link">
+                        <div class="article-card__image">
+                            <img src="../assets/img/articles/reencarnacao.jpg" alt="Reencarnação e Lei de Causa e Efeito">
+                        </div>
+                        <div class="article-card__content">
+                            <span class="article-card__category">Doutrina</span>
+                            <h3 class="article-card__title">Reencarnação e a Lei de Causa e Efeito</h3>
+                            <p class="article-card__excerpt">Compreenda como o princípio do karma se relaciona com a visão espírita da reencarnação e da evolução espiritual.</p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">12 de março, 2025</span>
+                                <span class="article-card__reading-time">8 min de leitura</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Artigo 2 -->
+                <article class="article-card">
+                    <a href="./artigos/mediunidade-desenvolvimento.html" class="article-card__link">
+                        <div class="article-card__image">
+                            <img src="../assets/img/articles/mediunidade.jpg" alt="Desenvolvimento da Mediunidade">
+                        </div>
+                        <div class="article-card__content">
+                            <span class="article-card__category">Mediunidade</span>
+                            <h3 class="article-card__title">O Desenvolvimento Consciente da Mediunidade</h3>
+                            <p class="article-card__excerpt">Orientações práticas para o desenvolvimento seguro e equilibrado das faculdades mediúnicas.</p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">5 de março, 2025</span>
+                                <span class="article-card__reading-time">10 min de leitura</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Artigo 3 -->
+                <article class="article-card">
+                    <a href="./artigos/evangelho-no-lar.html" class="article-card__link">
+                        <div class="article-card__image">
+                            <img src="../assets/img/articles/evangelho-no-lar.jpg" alt="Evangelho no Lar">
+                        </div>
+                        <div class="article-card__content">
+                            <span class="article-card__category">Prática</span>
+                            <h3 class="article-card__title">A Importância do Evangelho no Lar</h3>
+                            <p class="article-card__excerpt">Como estabelecer e manter a prática do Evangelho no Lar para harmonização do ambiente familiar.</p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">28 de fevereiro, 2025</span>
+                                <span class="article-card__reading-time">6 min de leitura</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Artigo 4 -->
+                <article class="article-card">
+                    <a href="./artigos/perispírito-funcoes.html" class="article-card__link">
+                        <div class="article-card__image">
+                            <img src="../assets/img/articles/perispirito.jpg" alt="O Perispírito">
+                        </div>
+                        <div class="article-card__content">
+                            <span class="article-card__category">Doutrina</span>
+                            <h3 class="article-card__title">O Perispírito: Funções e Propriedades</h3>
+                            <p class="article-card__excerpt">Um estudo detalhado sobre o corpo fluídico que liga o espírito ao corpo físico e suas importantes funções.</p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">20 de fevereiro, 2025</span>
+                                <span class="article-card__reading-time">9 min de leitura</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Artigo 5 -->
+                <article class="article-card">
+                    <a href="./artigos/obsessao-espiritual.html" class="article-card__link">
+                        <div class="article-card__image">
+                            <img src="../assets/img/articles/obsessao.jpg" alt="Obsessão Espiritual">
+                        </div>
+                        <div class="article-card__content">
+                            <span class="article-card__category">Mediunidade</span>
+                            <h3 class="article-card__title">Obsessão Espiritual: Prevenção e Tratamento</h3>
+                            <p class="article-card__excerpt">Entenda os mecanismos da obsessão espiritual e como se proteger através de hábitos saudáveis e elevação de pensamentos.</p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">12 de fevereiro, 2025</span>
+                                <span class="article-card__reading-time">11 min de leitura</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Artigo 6 -->
+                <article class="article-card">
+                    <a href="./artigos/reforma-intima.html" class="article-card__link">
+                        <div class="article-card__image">
+                            <img src="../assets/img/articles/reforma-intima.jpg" alt="Reforma Íntima">
+                        </div>
+                        <div class="article-card__content">
+                            <span class="article-card__category">Reflexão</span>
+                            <h3 class="article-card__title">Reforma Íntima: O Verdadeiro Caminho da Evolução</h3>
+                            <p class="article-card__excerpt">A transformação moral e o autoconhecimento como ferramentas essenciais para o progresso espiritual.</p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">5 de fevereiro, 2025</span>
+                                <span class="article-card__reading-time">7 min de leitura</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination__btn pagination__btn--prev" disabled aria-label="Página anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="pagination__numbers">
+                    <a href="#" class="pagination__link active">1</a>
+                    <a href="#" class="pagination__link">2</a>
+                    <a href="#" class="pagination__link">3</a>
+                    <a href="#" class="pagination__link">4</a>
+                    <span class="pagination__ellipsis">...</span>
+                    <a href="#" class="pagination__link">9</a>
+                </div>
+                <button class="pagination__btn pagination__btn--next" aria-label="Próxima página">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section class="section">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">Categorias de Artigos</h2>
+                <p class="section__subtitle">Explore nosso conteúdo por temas</p>
+            </header>
+            
+            <div class="categories-grid">
+                <a href="./artigos-categoria.html?categoria=doutrina" class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="category-card__title">Doutrina</h3>
+                    <p class="category-card__description">Fundamentos do Espiritismo codificado por Allan Kardec</p>
+                    <span class="category-card__count">42 artigos</span>
+                </a>
+                
+                <a href="./artigos-categoria.html?categoria=mediunidade" class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3 class="category-card__title">Mediunidade</h3>
+                    <p class="category-card__description">Faculdades mediúnicas e comunicação com o plano espiritual</p>
+                    <span class="category-card__count">35 artigos</span>
+                </a>
+                
+                <a href="./artigos-categoria.html?categoria=evangelho" class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="category-card__title">Evangelho</h3>
+                    <p class="category-card__description">Ensinamentos morais de Jesus à luz do Espiritismo</p>
+                    <span class="category-card__count">28 artigos</span>
+                </a>
+                
+                <a href="./artigos-categoria.html?categoria=pratica" class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="category-card__title">Prática</h3>
+                    <p class="category-card__description">Atividades e exercícios para o crescimento espiritual</p>
+                    <span class="category-card__count">23 artigos</span>
+                </a>
+                
+                <a href="./artigos-categoria.html?categoria=reflexao" class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="category-card__title">Reflexão</h3>
+                    <p class="category-card__description">Pensamentos e reflexões para o autoconhecimento</p>
+                    <span class="category-card__count">31 artigos</span>
+                </a>
+                
+                <a href="./artigos-categoria.html?categoria=ciencia" class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="category-card__title">Ciência</h3>
+                    <p class="category-card__description">Diálogo entre a ciência e o espiritismo</p>
+                    <span class="category-card__count">19 artigos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="section newsletter newsletter--gradient">
+        <div class="container">
+            <div class="newsletter__content">
+                <h2 class="newsletter__title">Receba nossas reflexões espirituais</h2>
+                <p class="newsletter__description">Inscreva-se em nossa newsletter para receber artigos inspiradores e atualizações sobre novos conteúdos.</p>
+                
+                <form class="newsletter__form">
+                    <div class="input-group">
+                        <input type="email" class="input" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="btn btn--primary">Assinar</button>
+                    </div>
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span class="checkbox__text">Concordo com a <a href="./privacy.html">Política de Privacidade</a></span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h2 class="footer__logo">Luz Interior</h2>
+                    <p class="footer__tagline">Portal Espírita</p>
+                    <p class="footer__description">Divulgando a doutrina espírita através de conteúdo de qualidade e acessível a todos.</p>
+                    
+                    <div class="footer__social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h3 class="footer__heading">Navegue</h3>
+                        <ul class="footer__menu">
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="./biblioteca.html">Biblioteca</a></li>
+                            <li><a href="./artigos.html">Artigos</a></li>
+                            <li><a href="./estudos.html">Estudos</a></li>
+                            <li><a href="./contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h3 class="footer__heading">Recursos</h3>
+                        <ul class="footer__menu">
+                            <li><a href="./biblioteca.html">Livros PDF</a></li>
+                            <li><a href="./estudos.html">Roteiros de Estudo</a></li>
+                            <li><a href="./audio.html">Áudios</a></li>
+                            <li><a href="./videos.html">Vídeos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h3 class="footer__heading">Institucional</h3>
+                        <ul class="footer__menu">
+                            <li><a href="./sobre.html">Sobre Nós</a></li>
+                            <li><a href="./privacy.html">Política de Privacidade</a></li>
+                            <li><a href="./terms-of-service.html">Termos de Uso</a></li>
+                            <li><a href="./contato.html">Fale Conosco</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Luz Interior - Portal Espírita. Todos os direitos reservados.</p>
+                <p class="footer__credits">Desenvolvido com <i class="fas fa-heart"></i> e boas vibrações</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/modules/artigos.js" type="module"></script>
+</body>
+</html>

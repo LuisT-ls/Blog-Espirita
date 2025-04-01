@@ -1,0 +1,144 @@
+/* 
+   Luz Interior - Portal Espírita
+   Variáveis CSS
+   Versão: 1.0.0
+*/
+
+:root {
+  /* Cores Principais */
+  --color-primary: #6a5acd; /* Azul-violeta - representa a espiritualidade */
+  --color-primary-light: #9e91e4;
+  --color-primary-dark: #4d3e9e;
+  --color-primary-rgb: 106, 90, 205;
+
+  --color-secondary: #ffa07a; /* Salmão claro - representa vitalidade e energia */
+  --color-secondary-light: #ffc5ab;
+  --color-secondary-dark: #e6794a;
+  --color-secondary-rgb: 255, 160, 122;
+
+  --color-accent: #20b2aa; /* Verde-azulado - representa harmonia e equilíbrio */
+  --color-accent-light: #5fd3cc;
+  --color-accent-dark: #0e8f88;
+  --color-accent-rgb: 32, 178, 170;
+
+  /* Cores Neutras */
+  --color-background: #ffffff;
+  --color-background-alt: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-text-lighter: #999999;
+  --color-text-white: #ffffff;
+
+  /* Cores de Estado */
+  --color-success: #4caf50;
+  --color-success-light: #e8f5e9;
+  --color-success-dark: #2e7d32;
+
+  --color-info: #2196f3;
+  --color-info-light: #e3f2fd;
+  --color-info-dark: #0d47a1;
+
+  --color-warning: #ff9800;
+  --color-warning-light: #fff3e0;
+  --color-warning-dark: #e65100;
+
+  --color-error: #f44336;
+  --color-error-light: #ffebee;
+  --color-error-dark: #b71c1c;
+
+  /* Tipografia */
+  --font-primary: 'Montserrat', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Espaçamento */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --container-padding: 1rem;
+
+  /* Bordas */
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius: 0.5rem; /* 8px */
+  --border-radius-lg: 1rem; /* 16px */
+  --border-radius-xl: 1.5rem; /* 24px */
+  --border-radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Transições */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+
+  /* Z-index */
+  --z-negative: -1;
+  --z-elevate: 1;
+  --z-dropdown: 10;
+  --z-sticky: 100;
+  --z-fixed: 200;
+  --z-modal: 300;
+  --z-popover: 400;
+  --z-tooltip: 500;
+
+  /* Gradientes */
+  --gradient-primary: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  --gradient-secondary: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-secondary-light)
+  );
+  --gradient-accent: linear-gradient(
+    to right,
+    var(--color-accent),
+    var(--color-accent-light)
+  );
+  --gradient-purple-blue: linear-gradient(135deg, #6a5acd 0%, #4169e1 100%);
+  --gradient-spiritual: linear-gradient(
+    135deg,
+    #6a5acd 0%,
+    #9370db 50%,
+    #ba55d3 100%
+  );
+}

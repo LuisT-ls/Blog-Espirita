@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Biblioteca virtual espírita com livros em PDF para download gratuito"
+    />
+    <title>Biblioteca Digital | Luz Interior - Portal Espírita</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="../assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../pages/css/biblioteca.css" />
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="../index.html" class="header__logo">
+            <h1>Luz Interior</h1>
+            <span class="header__tagline">Portal Espírita</span>
+          </a>
+
+          <button class="header__menu-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li><a href="../index.html">Início</a></li>
+              <li><a href="./biblioteca.html" class="active">Biblioteca</a></li>
+              <li><a href="./artigos.html">Artigos</a></li>
+              <li><a href="./estudos.html">Estudos</a></li>
+              <li><a href="./contato.html">Contato</a></li>
+            </ul>
+
+            <div class="header__actions">
+              <button
+                class="theme-toggle"
+                aria-label="Alternar tema claro/escuro"
+              >
+                <i class="fas fa-sun theme-toggle__icon--light"></i>
+                <i class="fas fa-moon theme-toggle__icon--dark"></i>
+              </button>
+              <a href="./busca.html" class="btn-icon" aria-label="Buscar">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Biblioteca Digital</h1>
+        <p class="page-header__subtitle">
+          Acervo de obras espíritas para leitura online e download em PDF
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter-group">
+            <label for="category-filter" class="filter__label">Categoria</label>
+            <select id="category-filter" class="filter__select">
+              <option value="all">Todas as categorias</option>
+              <option value="codificacao">Codificação</option>
+              <option value="romance">Romance</option>
+              <option value="estudo">Estudo</option>
+              <option value="psicografia">Psicografia</option>
+              <option value="filosofia">Filosofia</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="author-filter" class="filter__label">Autor</label>
+            <select id="author-filter" class="filter__select">
+              <option value="all">Todos os autores</option>
+              <option value="allan-kardec">Allan Kardec</option>
+              <option value="chico-xavier">Chico Xavier</option>
+              <option value="divaldo-franco">Divaldo Franco</option>
+              <option value="andre-luiz">André Luiz</option>
+              <option value="emmanuel">Emmanuel</option>
+              <option value="joanna-de-angelis">Joanna de Ângelis</option>
+              <option value="leon-denis">Léon Denis</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="search-books" class="filter__label">Busca</label>
+            <div class="input-with-icon">
+              <input
+                type="text"
+                id="search-books"
+                class="filter__input"
+                placeholder="Buscar livros..."
+              />
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+
+          <div class="filter-group view-options">
+            <span class="filter__label">Visualização</span>
+            <div class="view-toggle">
+              <button
+                class="view-toggle__btn view-toggle__btn--grid active"
+                aria-label="Visualização em grade"
+              >
+                <i class="fas fa-th-large"></i>
+              </button>
+              <button
+                class="view-toggle__btn view-toggle__btn--list"
+                aria-label="Visualização em lista"
+              >
+                <i class="fas fa-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Library Grid -->
+    <section class="library-section">
+      <div class="container">
+        <div class="results-info">
+          <p class="results-count">
+            <span id="books-count">42</span> livros encontrados
+          </p>
+          <div class="sorting">
+            <label for="sort-books" class="sorting__label">Ordenar por:</label>
+            <select id="sort-books" class="sorting__select">
+              <option value="title-asc">Título (A-Z)</option>
+              <option value="title-desc">Título (Z-A)</option>
+              <option value="author-asc">Autor (A-Z)</option>
+              <option value="author-desc">Autor (Z-A)</option>
+              <option value="popular">Mais Populares</option>
+              <option value="recent">Adicionados Recentemente</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="books-grid">
+          <!-- Codificação - Allan Kardec -->
+          <div
+            class="book-card"
+            data-category="codificacao"
+            data-author="allan-kardec"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/livro-dos-espiritos.jpg"
+                alt="O Livro dos Espíritos"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./livros/livro-dos-espiritos.html"
+                  class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/livro-dos-espiritos.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">O Livro dos Espíritos</h3>
+              <p class="book-card__author">Allan Kardec</p>
+              <p class="book-card__category">Codificação</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1857</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 2.5k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="codificacao"
+            data-author="allan-kardec"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/livro-dos-mediuns.jpg"
+                alt="O Livro dos Médiuns"
+              />
+              <div class="book-card__overlay">
+                <a href="./livros/livro-dos-mediuns.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/livro-dos-mediuns.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">O Livro dos Médiuns</h3>
+              <p class="book-card__author">Allan Kardec</p>
+              <p class="book-card__category">Codificação</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1861</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 1.8k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="codificacao"
+            data-author="allan-kardec"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/evangelho-segundo-espiritismo.jpg"
+                alt="O Evangelho Segundo o Espiritismo"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./livros/evangelho-segundo-espiritismo.html"
+                  class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/evangelho-segundo-espiritismo.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">
+                O Evangelho Segundo o Espiritismo
+              </h3>
+              <p class="book-card__author">Allan Kardec</p>
+              <p class="book-card__category">Codificação</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1864</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 2.2k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="codificacao"
+            data-author="allan-kardec"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/ceu-e-inferno.jpg"
+                alt="O Céu e o Inferno"
+              />
+              <div class="book-card__overlay">
+                <a href="./livros/ceu-e-inferno.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/ceu-e-inferno.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">O Céu e o Inferno</h3>
+              <p class="book-card__author">Allan Kardec</p>
+              <p class="book-card__category">Codificação</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1865</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 1.5k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="codificacao"
+            data-author="allan-kardec"
+          >
+            <div class="book-card__cover">
+              <img src="../assets/img/books/genese.jpg" alt="A Gênese" />
+              <div class="book-card__overlay">
+                <a href="./livros/genese.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a href="../assets/pdf/genese.pdf" class="btn-icon" download>
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">A Gênese</h3>
+              <p class="book-card__author">Allan Kardec</p>
+              <p class="book-card__category">Codificação</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1868</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 1.3k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Romances - Chico Xavier -->
+          <div
+            class="book-card"
+            data-category="romance"
+            data-author="chico-xavier"
+          >
+            <div class="book-card__cover">
+              <img src="../assets/img/books/nosso-lar.jpg" alt="Nosso Lar" />
+              <div class="book-card__overlay">
+                <a href="./livros/nosso-lar.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a href="../assets/pdf/nosso-lar.pdf" class="btn-icon" download>
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">Nosso Lar</h3>
+              <p class="book-card__author">
+                Francisco Cândido Xavier / André Luiz
+              </p>
+              <p class="book-card__category">Romance</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1944</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 3.2k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="romance"
+            data-author="chico-xavier"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/paulo-e-estevao.jpg"
+                alt="Paulo e Estêvão"
+              />
+              <div class="book-card__overlay">
+                <a href="./livros/paulo-e-estevao.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/paulo-e-estevao.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">Paulo e Estêvão</h3>
+              <p class="book-card__author">
+                Francisco Cândido Xavier / Emmanuel
+              </p>
+              <p class="book-card__category">Romance</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1941</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 1.9k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="estudo"
+            data-author="andre-luiz"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/missionarios-da-luz.jpg"
+                alt="Missionários da Luz"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./livros/missionarios-da-luz.html"
+                  class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/missionarios-da-luz.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">Missionários da Luz</h3>
+              <p class="book-card__author">
+                Francisco Cândido Xavier / André Luiz
+              </p>
+              <p class="book-card__category">Estudo</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1945</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 1.7k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Outros autores -->
+          <div
+            class="book-card"
+            data-category="filosofia"
+            data-author="leon-denis"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/depois-da-morte.jpg"
+                alt="Depois da Morte"
+              />
+              <div class="book-card__overlay">
+                <a href="./livros/depois-da-morte.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/depois-da-morte.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">Depois da Morte</h3>
+              <p class="book-card__author">Léon Denis</p>
+              <p class="book-card__category">Filosofia</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1890</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 1.2k</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="book-card"
+            data-category="psicografia"
+            data-author="divaldo-franco"
+          >
+            <div class="book-card__cover">
+              <img
+                src="../assets/img/books/messe-de-amor.jpg"
+                alt="Messe de Amor"
+              />
+              <div class="book-card__overlay">
+                <a href="./livros/messe-de-amor.html" class="btn btn--small"
+                  >Ler Online</a
+                >
+                <a
+                  href="../assets/pdf/messe-de-amor.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">Messe de Amor</h3>
+              <p class="book-card__author">
+                Divaldo Franco / Joanna de Ângelis
+              </p>
+              <p class="book-card__category">Psicografia</p>
+              <div class="book-card__meta">
+                <span class="book-card__year">1965</span>
+                <span class="book-card__downloads"
+                  ><i class="fas fa-download"></i> 980</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Mais livros seriam adicionados aqui -->
+        </div>
+
+        <div class="pagination">
+          <button
+            class="pagination__btn pagination__btn--prev"
+            disabled
+            aria-label="Página anterior"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="pagination__numbers">
+            <a href="#" class="pagination__link active">1</a>
+            <a href="#" class="pagination__link">2</a>
+            <a href="#" class="pagination__link">3</a>
+            <a href="#" class="pagination__link">4</a>
+            <span class="pagination__ellipsis">...</span>
+            <a href="#" class="pagination__link">7</a>
+          </div>
+          <button
+            class="pagination__btn pagination__btn--next"
+            aria-label="Próxima página"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h2 class="footer__logo">Luz Interior</h2>
+            <p class="footer__tagline">Portal Espírita</p>
+            <p class="footer__description">
+              Divulgando a doutrina espírita através de conteúdo de qualidade e
+              acessível a todos.
+            </p>
+
+            <div class="footer__social">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Spotify">
+                <i class="fab fa-spotify"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__group">
+              <h3 class="footer__heading">Navegue</h3>
+              <ul class="footer__menu">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="./biblioteca.html">Biblioteca</a></li>
+                <li><a href="./artigos.html">Artigos</a></li>
+                <li><a href="./estudos.html">Estudos</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Recursos</h3>
+              <ul class="footer__menu">
+                <li><a href="./biblioteca.html">Livros PDF</a></li>
+                <li><a href="./estudos.html">Roteiros de Estudo</a></li>
+                <li><a href="./audio.html">Áudios</a></li>
+                <li><a href="./videos.html">Vídeos</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Institucional</h3>
+              <ul class="footer__menu">
+                <li><a href="./sobre.html">Sobre Nós</a></li>
+                <li><a href="./privacy.html">Política de Privacidade</a></li>
+                <li><a href="./terms-of-service.html">Termos de Uso</a></li>
+                <li><a href="./contato.html">Fale Conosco</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2025 Luz Interior - Portal Espírita. Todos os direitos
+            reservados.
+          </p>
+          <p class="footer__credits">
+            Desenvolvido com <i class="fas fa-heart"></i> e boas vibrações
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/modules/biblioteca.js" type="module"></script>
+  </body>
+</html>

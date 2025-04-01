@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Roteiros e materiais de estudo sobre espiritismo, mediunidade e desenvolvimento espiritual"
+    />
+    <title>Estudos | Luz Interior - Portal Espírita</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="../assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../pages/css/estudos.css" />
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="../index.html" class="header__logo">
+            <h1>Luz Interior</h1>
+            <span class="header__tagline">Portal Espírita</span>
+          </a>
+
+          <button class="header__menu-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li><a href="../index.html">Início</a></li>
+              <li><a href="./biblioteca.html">Biblioteca</a></li>
+              <li><a href="./artigos.html">Artigos</a></li>
+              <li><a href="./estudos.html" class="active">Estudos</a></li>
+              <li><a href="./contato.html">Contato</a></li>
+            </ul>
+
+            <div class="header__actions">
+              <button
+                class="theme-toggle"
+                aria-label="Alternar tema claro/escuro"
+              >
+                <i class="fas fa-sun theme-toggle__icon--light"></i>
+                <i class="fas fa-moon theme-toggle__icon--dark"></i>
+              </button>
+              <a href="./busca.html" class="btn-icon" aria-label="Buscar">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Estudos</h1>
+        <p class="page-header__subtitle">
+          Roteiros e materiais de estudo para aprofundamento na doutrina
+          espírita
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter-group">
+            <label for="nivel-filter" class="filter__label">Nível</label>
+            <select id="nivel-filter" class="filter__select">
+              <option value="all">Todos os níveis</option>
+              <option value="iniciante">Iniciante</option>
+              <option value="intermediario">Intermediário</option>
+              <option value="avancado">Avançado</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="tema-filter" class="filter__label">Tema</label>
+            <select id="tema-filter" class="filter__select">
+              <option value="all">Todos os temas</option>
+              <option value="doutrina">Doutrina</option>
+              <option value="mediunidade">Mediunidade</option>
+              <option value="evangelho">Evangelho</option>
+              <option value="reforma-intima">Reforma Íntima</option>
+              <option value="filosofia">Filosofia</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="search-estudos" class="filter__label">Busca</label>
+            <div class="input-with-icon">
+              <input
+                type="text"
+                id="search-estudos"
+                class="filter__input"
+                placeholder="Buscar estudos..."
+              />
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section">
+      <div class="container">
+        <div class="study-intro">
+          <div class="study-intro__content">
+            <h2 class="study-intro__title">
+              Como utilizar os roteiros de estudo
+            </h2>
+            <p class="study-intro__text">
+              Nossos roteiros de estudo são organizados por temas e níveis de
+              aprofundamento. Recomendamos que iniciantes comecem pelos roteiros
+              básicos, e avancem gradualmente para os níveis intermediário e
+              avançado. Cada roteiro inclui textos para leitura, questões para
+              reflexão e atividades práticas.
+            </p>
+            <div class="study-intro__features">
+              <div class="study-intro__feature">
+                <i class="fas fa-book-reader"></i>
+                <span>Textos explicativos</span>
+              </div>
+              <div class="study-intro__feature">
+                <i class="fas fa-tasks"></i>
+                <span>Atividades práticas</span>
+              </div>
+              <div class="study-intro__feature">
+                <i class="fas fa-question-circle"></i>
+                <span>Questões para reflexão</span>
+              </div>
+              <div class="study-intro__feature">
+                <i class="fas fa-download"></i>
+                <span>Material para download</span>
+              </div>
+            </div>
+            <a href="./metodologia-estudo.html" class="btn btn--primary"
+              >Ver metodologia completa</a
+            >
+          </div>
+          <div class="study-intro__image">
+            <img src="../assets/img/study-guide.jpg" alt="Guia de Estudos" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beginner Studies -->
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Roteiros para Iniciantes</h2>
+          <p class="section__subtitle">
+            Conteúdos fundamentais para quem está começando os estudos da
+            doutrina espírita
+          </p>
+        </header>
+
+        <div class="study-grid">
+          <!-- Roteiro 1 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-doutrina">Doutrina</span>
+              <span class="study-card__level">Iniciante</span>
+            </div>
+            <h3 class="study-card__title">Princípios Básicos do Espiritismo</h3>
+            <p class="study-card__description">
+              Estudo dos princípios fundamentais da doutrina espírita:
+              existência de Deus, imortalidade da alma, comunicabilidade dos
+              espíritos, reencarnação e pluralidade dos mundos habitados.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 4 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 5 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/principios-basicos.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 2 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-evangelho">Evangelho</span>
+              <span class="study-card__level">Iniciante</span>
+            </div>
+            <h3 class="study-card__title">
+              Introdução ao Evangelho Segundo o Espiritismo
+            </h3>
+            <p class="study-card__description">
+              Estudo introdutório das principais lições morais contidas no
+              Evangelho Segundo o Espiritismo, com foco nos ensinamentos de
+              Jesus sob a ótica espírita.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 6 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 8 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/introducao-evangelho.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 3 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-mediunidade">Mediunidade</span>
+              <span class="study-card__level">Iniciante</span>
+            </div>
+            <h3 class="study-card__title">Conceitos Básicos de Mediunidade</h3>
+            <p class="study-card__description">
+              Introdução aos conceitos fundamentais da mediunidade, tipos de
+              médiuns, desenvolvimento mediúnico responsável e sua finalidade
+              segundo a doutrina espírita.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 5 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 6 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/conceitos-mediunidade.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 4 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-reforma-intima"
+                >Reforma Íntima</span
+              >
+              <span class="study-card__level">Iniciante</span>
+            </div>
+            <h3 class="study-card__title">
+              Primeiros Passos na Reforma Íntima
+            </h3>
+            <p class="study-card__description">
+              Abordagem inicial do trabalho de reforma íntima, com foco no
+              autoconhecimento, análise de sentimentos e emoções, e
+              transformação moral baseada nos ensinamentos espíritas.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 8 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 4 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/primeiros-passos-reforma.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+        </div>
+
+        <div class="section__footer">
+          <a
+            href="./estudos-nivel.html?nivel=iniciante"
+            class="btn btn--outline"
+            >Ver todos os roteiros para iniciantes</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Intermediate Studies -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Roteiros Intermediários</h2>
+          <p class="section__subtitle">
+            Aprofundamento nos estudos espíritas para quem já conhece os
+            princípios básicos
+          </p>
+        </header>
+
+        <div class="study-grid">
+          <!-- Roteiro 1 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-doutrina">Doutrina</span>
+              <span class="study-card__level">Intermediário</span>
+            </div>
+            <h3 class="study-card__title">
+              Estudo Aprofundado do Livro dos Espíritos
+            </h3>
+            <p class="study-card__description">
+              Análise detalhada das quatro partes do Livro dos Espíritos, com
+              estudo sistemático das questões fundamentais abordadas por Allan
+              Kardec.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 12 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 10 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/livro-dos-espiritos.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 2 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-mediunidade">Mediunidade</span>
+              <span class="study-card__level">Intermediário</span>
+            </div>
+            <h3 class="study-card__title">Prática Mediúnica Responsável</h3>
+            <p class="study-card__description">
+              Estudo das diretrizes para o exercício responsável da mediunidade,
+              ética mediúnica, e o papel do médium na disseminação da doutrina
+              espírita.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 10 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 8 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/pratica-mediunica.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 3 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-filosofia">Filosofia</span>
+              <span class="study-card__level">Intermediário</span>
+            </div>
+            <h3 class="study-card__title">
+              Aspectos Filosóficos do Espiritismo
+            </h3>
+            <p class="study-card__description">
+              Análise do espiritismo como doutrina filosófica, suas relações com
+              outras correntes filosóficas e seu posicionamento diante das
+              questões existenciais.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 9 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 7 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/filosofia-espirita.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 4 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-evangelho">Evangelho</span>
+              <span class="study-card__level">Intermediário</span>
+            </div>
+            <h3 class="study-card__title">
+              As Parábolas de Jesus à Luz do Espiritismo
+            </h3>
+            <p class="study-card__description">
+              Interpretação das principais parábolas de Jesus sob a ótica da
+              doutrina espírita, com aplicações práticas para a vida cotidiana.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 8 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 12 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/parabolas-jesus.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+        </div>
+
+        <div class="section__footer">
+          <a
+            href="./estudos-nivel.html?nivel=intermediario"
+            class="btn btn--outline"
+            >Ver todos os roteiros intermediários</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Studies -->
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Roteiros Avançados</h2>
+          <p class="section__subtitle">
+            Estudos aprofundados para quem busca conhecimento especializado
+          </p>
+        </header>
+
+        <div class="study-grid">
+          <!-- Roteiro 1 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-doutrina">Doutrina</span>
+              <span class="study-card__level">Avançado</span>
+            </div>
+            <h3 class="study-card__title">A Gênese: Estudo Aprofundado</h3>
+            <p class="study-card__description">
+              Análise detalhada da obra A Gênese de Allan Kardec, explorando os
+              aspectos científicos e as leis morais que regem o universo segundo
+              a visão espírita.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 14 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 12 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/genese-aprofundada.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+
+          <!-- Roteiro 2 -->
+          <div class="study-card">
+            <div class="study-card__header">
+              <span class="flag flag--category-mediunidade">Mediunidade</span>
+              <span class="study-card__level">Avançado</span>
+            </div>
+            <h3 class="study-card__title">Mecanismos da Mediunidade</h3>
+            <p class="study-card__description">
+              Estudo aprofundado sobre os mecanismos psicodinâmicos da
+              mediunidade, perispírito, ondas mentais e aspectos científicos do
+              intercâmbio mediúnico.
+            </p>
+            <div class="study-card__meta">
+              <span class="study-card__duration"
+                ><i class="far fa-clock"></i> 12 semanas</span
+              >
+              <span class="study-card__modules"
+                ><i class="fas fa-layer-group"></i> 10 módulos</span
+              >
+            </div>
+            <a
+              href="./estudos/mecanismos-mediunidade.html"
+              class="btn btn--primary btn--full"
+              >Acessar roteiro</a
+            >
+          </div>
+        </div>
+
+        <div class="section__footer">
+          <a href="./estudos-nivel.html?nivel=avancado" class="btn btn--outline"
+            >Ver todos os roteiros avançados</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Study Groups -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Grupos de Estudo Online</h2>
+          <p class="section__subtitle">
+            Participe de grupos de estudo virtuais mediados por nossa equipe
+          </p>
+        </header>
+
+        <div class="study-groups">
+          <div class="study-group-card">
+            <div class="study-group-card__header">
+              <span class="flag flag--category-doutrina">Doutrina</span>
+            </div>
+            <h3 class="study-group-card__title">
+              Estudo Sistemático da Doutrina Espírita
+            </h3>
+            <p class="study-group-card__description">
+              Grupo de estudo online com encontros semanais para análise
+              sistemática das obras básicas do Espiritismo.
+            </p>
+
+            <div class="study-group-card__info">
+              <div class="study-group-card__info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Segundas-feiras, 20h</span>
+              </div>
+              <div class="study-group-card__info-item">
+                <i class="fas fa-users"></i>
+                <span>15 vagas disponíveis</span>
+              </div>
+              <div class="study-group-card__info-item">
+                <i class="fas fa-video"></i>
+                <span>Via Zoom</span>
+              </div>
+            </div>
+
+            <a
+              href="./grupos-estudo.html?id=esde"
+              class="btn btn--primary btn--full"
+              >Inscrever-se</a
+            >
+          </div>
+
+          <div class="study-group-card">
+            <div class="study-group-card__header">
+              <span class="flag flag--category-evangelho">Evangelho</span>
+            </div>
+            <h3 class="study-group-card__title">Evangelho no Lar Virtual</h3>
+            <p class="study-group-card__description">
+              Encontros semanais para a prática do Evangelho no Lar em grupo,
+              com leituras, comentários e vibrações.
+            </p>
+
+            <div class="study-group-card__info">
+              <div class="study-group-card__info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Quintas-feiras, 19h30</span>
+              </div>
+              <div class="study-group-card__info-item">
+                <i class="fas fa-users"></i>
+                <span>Participação livre</span>
+              </div>
+              <div class="study-group-card__info-item">
+                <i class="fas fa-video"></i>
+                <span>Via YouTube</span>
+              </div>
+            </div>
+
+            <a
+              href="./grupos-estudo.html?id=evangelho"
+              class="btn btn--primary btn--full"
+              >Participar</a
+            >
+          </div>
+
+          <div class="study-group-card">
+            <div class="study-group-card__header">
+              <span class="flag flag--category-mediunidade">Mediunidade</span>
+            </div>
+            <h3 class="study-group-card__title">Estudo da Mediunidade</h3>
+            <p class="study-group-card__description">
+              Grupo para estudo teórico da mediunidade, baseado no Livro dos
+              Médiuns e obras complementares.
+            </p>
+
+            <div class="study-group-card__info">
+              <div class="study-group-card__info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Terças-feiras, 20h</span>
+              </div>
+              <div class="study-group-card__info-item">
+                <i class="fas fa-users"></i>
+                <span>10 vagas disponíveis</span>
+              </div>
+              <div class="study-group-card__info-item">
+                <i class="fas fa-video"></i>
+                <span>Via Google Meet</span>
+              </div>
+            </div>
+
+            <a
+              href="./grupos-estudo.html?id=mediunidade"
+              class="btn btn--primary btn--full"
+              >Inscrever-se</a
+            >
+          </div>
+        </div>
+
+        <div class="section__footer">
+          <a href="./grupos-estudo.html" class="btn btn--outline"
+            >Ver todos os grupos de estudo</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Study Materials -->
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Materiais Complementares</h2>
+          <p class="section__subtitle">
+            Recursos adicionais para enriquecer seus estudos
+          </p>
+        </header>
+
+        <div class="materials-grid">
+          <div class="material-card">
+            <div class="material-card__icon">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <h3 class="material-card__title">Apostilas</h3>
+            <p class="material-card__description">
+              Apostilas organizadas por temas para estudo individual ou em
+              grupo.
+            </p>
+            <a
+              href="./materiais-estudo.html?tipo=apostilas"
+              class="btn btn--outline btn--full"
+              >Acessar</a
+            >
+          </div>
+
+          <div class="material-card">
+            <div class="material-card__icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3 class="material-card__title">Exercícios</h3>
+            <p class="material-card__description">
+              Atividades práticas para fixação do conteúdo estudado.
+            </p>
+            <a
+              href="./materiais-estudo.html?tipo=exercicios"
+              class="btn btn--outline btn--full"
+              >Acessar</a
+            >
+          </div>
+
+          <div class="material-card">
+            <div class="material-card__icon">
+              <i class="fas fa-table"></i>
+            </div>
+            <h3 class="material-card__title">Quadros Sinóticos</h3>
+            <p class="material-card__description">
+              Resumos esquematizados dos principais temas da doutrina.
+            </p>
+            <a
+              href="./materiais-estudo.html?tipo=quadros"
+              class="btn btn--outline btn--full"
+              >Acessar</a
+            >
+          </div>
+
+          <div class="material-card">
+            <div class="material-card__icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3 class="material-card__title">Infográficos</h3>
+            <p class="material-card__description">
+              Representações visuais de conceitos espíritas.
+            </p>
+            <a
+              href="./materiais-estudo.html?tipo=infograficos"
+              class="btn btn--outline btn--full"
+              >Acessar</a
+            >
+          </div>
+
+          <div class="material-card">
+            <div class="material-card__icon">
+              <i class="fas fa-headphones"></i>
+            </div>
+            <h3 class="material-card__title">Áudios</h3>
+            <p class="material-card__description">
+              Palestras e audiolivros para estudar em qualquer lugar.
+            </p>
+            <a
+              href="./materiais-estudo.html?tipo=audios"
+              class="btn btn--outline btn--full"
+              >Acessar</a
+            >
+          </div>
+
+          <div class="material-card">
+            <div class="material-card__icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3 class="material-card__title">Slides</h3>
+            <p class="material-card__description">
+              Apresentações para apoiar grupos de estudo.
+            </p>
+            <a
+              href="./materiais-estudo.html?tipo=slides"
+              class="btn btn--outline btn--full"
+              >Acessar</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter newsletter--gradient">
+      <div class="container">
+        <div class="newsletter__content">
+          <h2 class="newsletter__title">Receba nossos roteiros de estudo</h2>
+          <p class="newsletter__description">
+            Inscreva-se em nossa newsletter para receber novos materiais de
+            estudo e atualizações de conteúdo.
+          </p>
+
+          <form class="newsletter__form">
+            <div class="input-group">
+              <input
+                type="email"
+                class="input"
+                placeholder="Seu melhor e-mail"
+                required
+              />
+              <button type="submit" class="btn btn--primary">Assinar</button>
+            </div>
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span class="checkbox__text"
+                >Concordo com a
+                <a href="./privacy.html">Política de Privacidade</a></span
+              >
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h2 class="footer__logo">Luz Interior</h2>
+            <p class="footer__tagline">Portal Espírita</p>
+            <p class="footer__description">
+              Divulgando a doutrina espírita através de conteúdo de qualidade e
+              acessível a todos.
+            </p>
+
+            <div class="footer__social">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Spotify">
+                <i class="fab fa-spotify"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__group">
+              <h3 class="footer__heading">Navegue</h3>
+              <ul class="footer__menu">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="./biblioteca.html">Biblioteca</a></li>
+                <li><a href="./artigos.html">Artigos</a></li>
+                <li><a href="./estudos.html">Estudos</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Recursos</h3>
+              <ul class="footer__menu">
+                <li><a href="./biblioteca.html">Livros PDF</a></li>
+                <li><a href="./estudos.html">Roteiros de Estudo</a></li>
+                <li><a href="./audio.html">Áudios</a></li>
+                <li><a href="./videos.html">Vídeos</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Institucional</h3>
+              <ul class="footer__menu">
+                <li><a href="./sobre.html">Sobre Nós</a></li>
+                <li><a href="./privacy.html">Política de Privacidade</a></li>
+                <li><a href="./terms-of-service.html">Termos de Uso</a></li>
+                <li><a href="./contato.html">Fale Conosco</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2025 Luz Interior - Portal Espírita. Todos os direitos
+            reservados.
+          </p>
+          <p class="footer__credits">
+            Desenvolvido com <i class="fas fa-heart"></i> e boas vibrações
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/modules/estudos.js" type="module"></script>
+  </body>
+</html>

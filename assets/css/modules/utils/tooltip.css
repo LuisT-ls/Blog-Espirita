@@ -1,0 +1,229 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Tooltips
+   assets/css/modules/utils/tooltip.css
+   Versão: 1.0.0
+*/
+
+/* Tooltip base */
+.tooltip {
+  position: absolute;
+  background-color: var(--color-text);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  max-width: 250px;
+  z-index: var(--z-tooltip);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.tooltip--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Posicionamento do tooltip */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.tooltip--top::after {
+  bottom: -10px;
+  border-color: var(--color-text) transparent transparent transparent;
+}
+
+.tooltip--bottom::after {
+  top: -10px;
+  border-color: transparent transparent var(--color-text) transparent;
+}
+
+.tooltip--left::after {
+  top: 50%;
+  right: -10px;
+  margin-top: -5px;
+  border-color: transparent transparent transparent var(--color-text);
+}
+
+.tooltip--right::after {
+  top: 50%;
+  left: -10px;
+  margin-top: -5px;
+  margin-left: 0;
+  border-color: transparent var(--color-text) transparent transparent;
+}
+
+/* Variações de cor */
+.tooltip--primary {
+  background-color: var(--color-primary);
+}
+
+.tooltip--primary.tooltip--top::after {
+  border-color: var(--color-primary) transparent transparent transparent;
+}
+
+.tooltip--primary.tooltip--bottom::after {
+  border-color: transparent transparent var(--color-primary) transparent;
+}
+
+.tooltip--primary.tooltip--left::after {
+  border-color: transparent transparent transparent var(--color-primary);
+}
+
+.tooltip--primary.tooltip--right::after {
+  border-color: transparent var(--color-primary) transparent transparent;
+}
+
+.tooltip--secondary {
+  background-color: var(--color-secondary);
+}
+
+.tooltip--secondary.tooltip--top::after {
+  border-color: var(--color-secondary) transparent transparent transparent;
+}
+
+.tooltip--secondary.tooltip--bottom::after {
+  border-color: transparent transparent var(--color-secondary) transparent;
+}
+
+.tooltip--secondary.tooltip--left::after {
+  border-color: transparent transparent transparent var(--color-secondary);
+}
+
+.tooltip--secondary.tooltip--right::after {
+  border-color: transparent var(--color-secondary) transparent transparent;
+}
+
+/* Tamanhos de tooltip */
+.tooltip--sm {
+  padding: 0.35rem 0.5rem;
+  font-size: calc(var(--font-size-xs) - 1px);
+  max-width: 180px;
+}
+
+.tooltip--lg {
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-sm);
+  max-width: 320px;
+}
+
+/* Tooltips multlinhas */
+.tooltip--multiline {
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* Tooltips com bordas */
+.tooltip--bordered {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Tooltips com ícones */
+.tooltip--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.tooltip__icon {
+  font-size: 1.2em;
+}
+
+/* Atributo data-tooltip */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: var(--color-text);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  max-width: 250px;
+  width: max-content;
+  z-index: var(--z-tooltip);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast),
+    visibility var(--transition-fast);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  margin-bottom: 10px;
+  pointer-events: none;
+}
+
+[data-tooltip]::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-text) transparent transparent transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  pointer-events: none;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after,
+[data-tooltip]:focus::before,
+[data-tooltip]:focus::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Variação posição atributo */
+[data-tooltip-position='bottom']::before {
+  bottom: auto;
+  top: 100%;
+  transform: translateX(-50%) translateY(10px);
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+[data-tooltip-position='bottom']::after {
+  top: auto;
+  bottom: -10px;
+  border-color: transparent transparent var(--color-text) transparent;
+}
+
+[data-tooltip-position='bottom']:hover::before,
+[data-tooltip-position='bottom']:focus::before {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .tooltip {
+    max-width: 200px;
+  }
+
+  [data-tooltip]::before {
+    max-width: 200px;
+  }
+}

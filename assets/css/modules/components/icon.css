@@ -1,0 +1,215 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Ícones
+   assets/css/modules/components/icon.css
+   Versão: 1.0.0
+*/
+
+/* Classes de ícones - compatível com Font Awesome */
+
+/* Tamanhos de ícones */
+.icon-xs {
+  font-size: 0.75rem;
+}
+
+.icon-sm {
+  font-size: 0.875rem;
+}
+
+.icon-md {
+  font-size: 1rem;
+}
+
+.icon-lg {
+  font-size: 1.25rem;
+}
+
+.icon-xl {
+  font-size: 1.5rem;
+}
+
+.icon-2x {
+  font-size: 2rem;
+}
+
+.icon-3x {
+  font-size: 3rem;
+}
+
+.icon-4x {
+  font-size: 4rem;
+}
+
+/* Cores de ícones */
+.icon-primary {
+  color: var(--color-primary);
+}
+
+.icon-secondary {
+  color: var(--color-secondary);
+}
+
+.icon-accent {
+  color: var(--color-accent);
+}
+
+.icon-success {
+  color: var(--color-success);
+}
+
+.icon-info {
+  color: var(--color-info);
+}
+
+.icon-warning {
+  color: var(--color-warning);
+}
+
+.icon-error {
+  color: var(--color-error);
+}
+
+.icon-light {
+  color: var(--color-text-light);
+}
+
+.icon-lighter {
+  color: var(--color-text-lighter);
+}
+
+.icon-white {
+  color: white;
+}
+
+/* Ícones com fundo */
+.icon-bg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+}
+
+.icon-bg--primary {
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+}
+
+.icon-bg--secondary {
+  background-color: rgba(var(--color-secondary-rgb), 0.1);
+  color: var(--color-secondary);
+}
+
+.icon-bg--accent {
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  color: var(--color-accent);
+}
+
+.icon-bg--success {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.icon-bg--info {
+  background-color: var(--color-info-light);
+  color: var(--color-info);
+}
+
+.icon-bg--warning {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.icon-bg--error {
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+}
+
+/* Tamanhos de ícones com fundo */
+.icon-bg--sm {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.icon-bg--lg {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+}
+
+.icon-bg--xl {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+
+/* Ícones com bordas */
+.icon-border {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+}
+
+/* Ícones para categorias específicas do blog */
+.icon-doutrina::before {
+  content: '\f02d'; /* book */
+}
+
+.icon-mediunidade::before {
+  content: '\f256'; /* hand-sparkles */
+}
+
+.icon-evangelho::before {
+  content: '\f674'; /* bible */
+}
+
+.icon-pratica::before {
+  content: '\f5ca'; /* hands-helping */
+}
+
+.icon-estudo::before {
+  content: '\f518'; /* graduation-cap */
+}
+
+/* Animações de ícones */
+.icon-spin {
+  animation: spin 2s linear infinite;
+}
+
+.icon-pulse {
+  animation: pulse 2s ease infinite;
+}
+
+.icon-beat {
+  animation: beat 1s ease infinite;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Ícones espirituais personalizados */
+.icon-spirit::before {
+  content: '\f2cc'; /* universal-access */
+}
+
+.icon-aura::before {
+  content: '\f185'; /* sun */
+}
+
+.icon-psychic::before {
+  content: '\f0eb'; /* lightbulb */
+}

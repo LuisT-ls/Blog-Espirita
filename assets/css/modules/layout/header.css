@@ -1,0 +1,319 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS do Cabeçalho
+   assets/css/modules/layout/header.css
+   Versão: 1.0.0
+*/
+
+/* Header principal */
+.header {
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  transition: all var(--transition-normal);
+}
+
+/* Conteúdo do header */
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.header__logo h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header__tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+/* Navegação */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Menu principal */
+.header__menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.header__menu a {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+}
+
+.header__menu a:hover,
+.header__menu a.active {
+  color: var(--color-primary);
+}
+
+.header__menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-normal);
+}
+
+.header__menu a:hover::after,
+.header__menu a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Ações do header */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Botão para menu móvel */
+.header__menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+/* Submenu */
+.header__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  z-index: var(--z-dropdown);
+}
+
+.header__menu li {
+  position: relative;
+}
+
+.header__menu li:hover .header__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__submenu li {
+  display: block;
+}
+
+.header__submenu a {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-normal);
+}
+
+.header__submenu a:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.05);
+}
+
+.header__submenu a::after {
+  display: none;
+}
+
+/* Header transparente */
+.header--transparent {
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  width: 100%;
+}
+
+.header--transparent .header__menu a {
+  color: white;
+}
+
+.header--transparent .header__logo h1 {
+  color: white;
+}
+
+.header--transparent .header__tagline {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header--transparent .header__menu-toggle span {
+  background-color: white;
+}
+
+/* Header com borda */
+.header--bordered {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Header ao rolar */
+.header--scrolled {
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: 70px;
+}
+
+.header--scrolled .header__content {
+  height: 70px;
+}
+
+.header--scrolled.header--transparent .header__menu a {
+  color: var(--color-text);
+}
+
+.header--scrolled.header--transparent .header__logo h1 {
+  color: var(--color-primary);
+}
+
+.header--scrolled.header--transparent .header__tagline {
+  color: var(--color-text-light);
+}
+
+.header--scrolled.header--transparent .header__menu-toggle span {
+  background-color: var(--color-text);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .header__content {
+    height: 70px;
+  }
+
+  .header__logo h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .header__menu {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__menu-toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-surface);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: var(--z-fixed);
+    overflow-y: auto;
+  }
+
+  .header__nav.show {
+    transform: translateX(0);
+  }
+
+  .header__menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .header__menu li {
+    width: 100%;
+  }
+
+  .header__menu a {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header__menu a::after {
+    display: none;
+  }
+
+  .header__submenu {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding: 0 0 0 1.25rem;
+    display: none;
+  }
+
+  .header__submenu.show {
+    display: block;
+  }
+
+  .header__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .header__menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .header__menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

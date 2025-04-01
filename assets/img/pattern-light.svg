@@ -1,0 +1,75 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definição de padrões e gradientes -->
+  <defs>
+    <!-- Gradiente radial para efeito de luz -->
+    <radialGradient id="centralGlow" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="white" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Padrão de pontos luminosos -->
+    <pattern id="lightDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="white" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Fundo com gradiente -->
+  <rect width="500" height="500" fill="url(#centralGlow)"/>
+  
+  <!-- Camada de pontos -->
+  <rect width="500" height="500" fill="url(#lightDots)"/>
+  
+  <!-- Linhas de energia espiritual -->
+  <g opacity="0.15">
+    <path d="M0,100 Q250,150 500,100" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M0,200 Q250,250 500,200" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M0,300 Q250,350 500,300" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M0,400 Q250,450 500,400" fill="none" stroke="white" stroke-width="0.8"/>
+    
+    <path d="M100,0 Q150,250 100,500" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M200,0 Q250,250 200,500" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M300,0 Q350,250 300,500" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M400,0 Q450,250 400,500" fill="none" stroke="white" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Símbolos espirituais sutis -->
+  <g opacity="0.1">
+    <!-- Símbolo 1: círculo com estrela -->
+    <circle cx="125" cy="125" r="30" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M125,95 L125,155 M95,125 L155,125 M107,107 L143,143 M107,143 L143,107" 
+          stroke="white" stroke-width="0.8" fill="none"/>
+    
+    <!-- Símbolo 2: espiral -->
+    <path d="M375,125 C375,135 365,135 365,125 C365,115 385,115 385,135 C385,155 355,155 355,125" 
+          stroke="white" stroke-width="0.8" fill="none"/>
+    
+    <!-- Símbolo 3: flor da vida (simplificada) -->
+    <circle cx="125" cy="375" r="20" fill="none" stroke="white" stroke-width="0.8"/>
+    <circle cx="145" cy="375" r="20" fill="none" stroke="white" stroke-width="0.8"/>
+    <circle cx="135" cy="358" r="20" fill="none" stroke="white" stroke-width="0.8"/>
+    <circle cx="135" cy="392" r="20" fill="none" stroke="white" stroke-width="0.8"/>
+    
+    <!-- Símbolo 4: triângulo com círculo -->
+    <polygon points="375,355 355,395 395,395" fill="none" stroke="white" stroke-width="0.8"/>
+    <circle cx="375" cy="375" r="15" fill="none" stroke="white" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Elementos flutuantes adicionar movimento visual -->
+  <g opacity="0.2">
+    <circle cx="250" cy="250" r="80" fill="none" stroke="white" stroke-width="0.5">
+      <animate attributeName="r" from="80" to="90" dur="8s" repeatCount="indefinite" values="80;90;80" keyTimes="0;0.5;1"/>
+      <animate attributeName="opacity" from="0.2" to="0.1" dur="8s" repeatCount="indefinite" values="0.2;0.1;0.2" keyTimes="0;0.5;1"/>
+    </circle>
+    
+    <circle cx="250" cy="250" r="120" fill="none" stroke="white" stroke-width="0.5">
+      <animate attributeName="r" from="120" to="130" dur="10s" repeatCount="indefinite" values="120;130;120" keyTimes="0;0.5;1"/>
+      <animate attributeName="opacity" from="0.15" to="0.05" dur="10s" repeatCount="indefinite" values="0.15;0.05;0.15" keyTimes="0;0.5;1"/>
+    </circle>
+    
+    <circle cx="250" cy="250" r="160" fill="none" stroke="white" stroke-width="0.3">
+      <animate attributeName="r" from="160" to="170" dur="12s" repeatCount="indefinite" values="160;170;160" keyTimes="0;0.5;1"/>
+      <animate attributeName="opacity" from="0.1" to="0.03" dur="12s" repeatCount="indefinite" values="0.1;0.03;0.1" keyTimes="0;0.5;1"/>
+    </circle>
+  </g>
+</svg>

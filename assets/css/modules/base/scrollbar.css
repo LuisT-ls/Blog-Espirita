@@ -1,0 +1,68 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Scrollbar
+   assets/css/modules/base/scrollbar.css
+   Versão: 1.0.0
+*/
+
+/* Scrollbar Base */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-background-alt);
+  border-radius: 10px;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-primary-rgb), 0.5);
+  border-radius: 10px;
+  transition: background-color var(--transition-fast);
+}
+
+/* Thumb hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Thumb active */
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-primary-dark);
+}
+
+/* Scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: var(--color-background-alt);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--color-primary-rgb), 0.5)
+    var(--color-background-alt);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark']::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+[data-theme='dark']::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-primary-rgb), 0.6);
+}
+
+[data-theme='dark'] * {
+  scrollbar-color: rgba(var(--color-primary-rgb), 0.6) #2a2a2a;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+}

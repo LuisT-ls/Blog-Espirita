@@ -1,0 +1,306 @@
+/* 
+   Luz Interior - Portal Espírita
+   CSS de Modais
+   assets/css/modules/components/modal.css
+   Versão: 1.0.0
+*/
+
+/* Backdrop do modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal),
+    visibility var(--transition-normal);
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Container do modal */
+.modal {
+  position: relative;
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px) scale(0.95);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.show .modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Tamanhos de modal */
+.modal--sm {
+  max-width: 400px;
+}
+
+.modal--lg {
+  max-width: 700px;
+}
+
+.modal--xl {
+  max-width: 900px;
+}
+
+.modal--full {
+  max-width: 95%;
+  height: 90vh;
+}
+
+/* Cabeçalho do modal */
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.modal__close {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-text-light);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text);
+}
+
+/* Corpo do modal */
+.modal__body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Rodapé do modal */
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  gap: 1rem;
+}
+
+/* Modal com imagem de fundo */
+.modal--image {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.modal--image .modal__header {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal--image .modal__title {
+  color: white;
+}
+
+.modal--image .modal__close {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.modal--image .modal__close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.modal--image .modal__footer {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal com overlay de cor */
+.modal--overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4)
+  );
+  z-index: -1;
+}
+
+/* Modal de confirmação */
+.modal--confirm .modal__body {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.modal--confirm .modal__icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal--confirm .modal__message {
+  font-size: var(--font-size-lg);
+  margin-bottom: 1.5rem;
+}
+
+.modal--confirm .modal__footer {
+  justify-content: center;
+}
+
+/* Modal lateral */
+.modal--side {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  max-height: 100vh;
+  width: 350px;
+  max-width: 90%;
+  border-radius: 0;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.show .modal--side {
+  transform: translateX(0);
+}
+
+/* Modal de compartilhamento */
+.modal--share .modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal__share-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 1rem;
+}
+
+.modal__share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.share-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  width: 70px;
+}
+
+.share-button__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  transition: transform var(--transition-fast);
+}
+
+.share-button:hover .share-button__icon {
+  transform: translateY(-3px);
+}
+
+.share-button__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+/* Cores de botões de compartilhamento */
+.share-button--facebook .share-button__icon {
+  background-color: #3b5999;
+}
+
+.share-button--twitter .share-button__icon {
+  background-color: #55acee;
+}
+
+.share-button--whatsapp .share-button__icon {
+  background-color: #25d366;
+}
+
+.share-button--telegram .share-button__icon {
+  background-color: #0088cc;
+}
+
+.share-button--email .share-button__icon {
+  background-color: var(--color-text);
+}
+
+/* Modal responsivo */
+@media (max-width: 768px) {
+  .modal {
+    max-width: 95%;
+  }
+
+  .modal__header,
+  .modal__footer {
+    padding: 1rem;
+  }
+
+  .modal__body {
+    padding: 1.25rem 1rem;
+  }
+
+  .modal__title {
+    font-size: var(--font-size-lg);
+  }
+
+  .modal--side {
+    width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+  }
+}

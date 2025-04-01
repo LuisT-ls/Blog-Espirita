@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portal de conteúdo espírita com livros, artigos e estudos sobre Espiritismo"
+    />
+    <title>Luz Interior - Portal Espírita</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="./assets/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">
+            <h1>Luz Interior</h1>
+            <span class="header__tagline">Portal Espírita</span>
+          </a>
+
+          <button class="header__menu-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li><a href="index.html" class="active">Início</a></li>
+              <li><a href="./pages/biblioteca.html">Biblioteca</a></li>
+              <li><a href="./pages/artigos.html">Artigos</a></li>
+              <li><a href="./pages/estudos.html">Estudos</a></li>
+              <li><a href="./pages/contato.html">Contato</a></li>
+            </ul>
+
+            <div class="header__actions">
+              <button
+                class="theme-toggle"
+                aria-label="Alternar tema claro/escuro"
+              >
+                <i class="fas fa-sun theme-toggle__icon--light"></i>
+                <i class="fas fa-moon theme-toggle__icon--dark"></i>
+              </button>
+              <a href="./pages/busca.html" class="btn-icon" aria-label="Buscar">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <h2 class="hero__title">
+            Iluminando caminhos através do conhecimento espírita
+          </h2>
+          <p class="hero__description">
+            Explore nossa biblioteca digital com obras fundamentais da doutrina
+            espírita, artigos inspiradores e conteúdos para seu desenvolvimento
+            espiritual.
+          </p>
+          <div class="hero__actions">
+            <a href="./pages/biblioteca.html" class="btn btn--primary"
+              >Explorar Biblioteca</a
+            >
+            <a href="./pages/artigos.html" class="btn btn--secondary"
+              >Ler Artigos</a
+            >
+          </div>
+        </div>
+
+        <div class="hero__illustration">
+          <div class="hero__decoration"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section class="section featured-books">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Obras em Destaque</h2>
+          <p class="section__subtitle">
+            Livros essenciais para o estudo da doutrina espírita
+          </p>
+        </header>
+
+        <div class="books-carousel">
+          <div class="book-card">
+            <div class="book-card__cover">
+              <img
+                src="./assets/img/books/livro-dos-espiritos.jpg"
+                alt="O Livro dos Espíritos"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./pages/livros/livro-dos-espiritos.html"
+                  class="btn btn--small"
+                  >Ler Agora</a
+                >
+                <a
+                  href="./assets/pdf/livro-dos-espiritos.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">O Livro dos Espíritos</h3>
+              <p class="book-card__author">Allan Kardec</p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-card__cover">
+              <img
+                src="./assets/img/books/livro-dos-mediuns.jpg"
+                alt="O Livro dos Médiuns"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./pages/livros/livro-dos-mediuns.html"
+                  class="btn btn--small"
+                  >Ler Agora</a
+                >
+                <a
+                  href="./assets/pdf/livro-dos-mediuns.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">O Livro dos Médiuns</h3>
+              <p class="book-card__author">Allan Kardec</p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-card__cover">
+              <img
+                src="./assets/img/books/evangelho-segundo-espiritismo.jpg"
+                alt="O Evangelho Segundo o Espiritismo"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./pages/livros/evangelho-segundo-espiritismo.html"
+                  class="btn btn--small"
+                  >Ler Agora</a
+                >
+                <a
+                  href="./assets/pdf/evangelho-segundo-espiritismo.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">
+                O Evangelho Segundo o Espiritismo
+              </h3>
+              <p class="book-card__author">Allan Kardec</p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-card__cover">
+              <img
+                src="./assets/img/books/ceu-e-inferno.jpg"
+                alt="O Céu e o Inferno"
+              />
+              <div class="book-card__overlay">
+                <a
+                  href="./pages/livros/ceu-e-inferno.html"
+                  class="btn btn--small"
+                  >Ler Agora</a
+                >
+                <a
+                  href="./assets/pdf/ceu-e-inferno.pdf"
+                  class="btn-icon"
+                  download
+                >
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h3 class="book-card__title">O Céu e o Inferno</h3>
+              <p class="book-card__author">Allan Kardec</p>
+            </div>
+          </div>
+
+          <div class="book-carousel__nav">
+            <button
+              class="carousel-btn carousel-btn--prev"
+              aria-label="Livro anterior"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button
+              class="carousel-btn carousel-btn--next"
+              aria-label="Próximo livro"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="section__footer">
+          <a href="./pages/biblioteca.html" class="btn btn--outline"
+            >Ver Todos os Livros</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="section latest-articles">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Artigos Recentes</h2>
+          <p class="section__subtitle">
+            Reflexões e estudos sobre a doutrina espírita
+          </p>
+        </header>
+
+        <div class="articles-grid">
+          <article class="article-card">
+            <a
+              href="./pages/artigos/reencarnacao-e-karma.html"
+              class="article-card__link"
+            >
+              <div class="article-card__image">
+                <img
+                  src="./assets/img/articles/reencarnacao.jpg"
+                  alt="Reencarnação e Lei de Causa e Efeito"
+                />
+              </div>
+              <div class="article-card__content">
+                <span class="article-card__category">Doutrina</span>
+                <h3 class="article-card__title">
+                  Reencarnação e a Lei de Causa e Efeito
+                </h3>
+                <p class="article-card__excerpt">
+                  Compreenda como o princípio do karma se relaciona com a visão
+                  espírita da reencarnação e da evolução espiritual.
+                </p>
+                <div class="article-card__meta">
+                  <span class="article-card__date">12 de Março, 2025</span>
+                  <span class="article-card__reading-time"
+                    >8 min de leitura</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a
+              href="./pages/artigos/mediunidade-desenvolvimento.html"
+              class="article-card__link"
+            >
+              <div class="article-card__image">
+                <img
+                  src="./assets/img/articles/mediunidade.jpg"
+                  alt="Desenvolvimento da Mediunidade"
+                />
+              </div>
+              <div class="article-card__content">
+                <span class="article-card__category">Mediunidade</span>
+                <h3 class="article-card__title">
+                  O Desenvolvimento Consciente da Mediunidade
+                </h3>
+                <p class="article-card__excerpt">
+                  Orientações práticas para o desenvolvimento seguro e
+                  equilibrado das faculdades mediúnicas.
+                </p>
+                <div class="article-card__meta">
+                  <span class="article-card__date">5 de Março, 2025</span>
+                  <span class="article-card__reading-time"
+                    >10 min de leitura</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a
+              href="./pages/artigos/evangelho-no-lar.html"
+              class="article-card__link"
+            >
+              <div class="article-card__image">
+                <img
+                  src="./assets/img/articles/evangelho-no-lar.jpg"
+                  alt="Evangelho no Lar"
+                />
+              </div>
+              <div class="article-card__content">
+                <span class="article-card__category">Prática</span>
+                <h3 class="article-card__title">
+                  A Importância do Evangelho no Lar
+                </h3>
+                <p class="article-card__excerpt">
+                  Como estabelecer e manter a prática do Evangelho no Lar para
+                  harmonização do ambiente familiar.
+                </p>
+                <div class="article-card__meta">
+                  <span class="article-card__date">28 de Fevereiro, 2025</span>
+                  <span class="article-card__reading-time"
+                    >6 min de leitura</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="section__footer">
+          <a href="./pages/artigos.html" class="btn btn--outline"
+            >Ver Todos os Artigos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="section quote-section">
+      <div class="container">
+        <blockquote class="quote">
+          <p class="quote__text">
+            "Nascer, morrer, renascer ainda e progredir sempre, tal é a lei."
+          </p>
+          <cite class="quote__author">Allan Kardec</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter__content">
+          <h2 class="newsletter__title">Receba conteúdo inspirador</h2>
+          <p class="newsletter__description">
+            Assine nossa newsletter e receba artigos, reflexões e novidades
+            sobre o Espiritismo.
+          </p>
+
+          <form class="newsletter__form">
+            <div class="input-group">
+              <input
+                type="email"
+                class="input"
+                placeholder="Seu melhor e-mail"
+                required
+              />
+              <button type="submit" class="btn btn--primary">Assinar</button>
+            </div>
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span class="checkbox__text"
+                >Concordo com a
+                <a href="./pages/privacy.html">Política de Privacidade</a></span
+              >
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h2 class="footer__logo">Luz Interior</h2>
+            <p class="footer__tagline">Portal Espírita</p>
+            <p class="footer__description">
+              Divulgando a doutrina espírita através de conteúdo de qualidade e
+              acessível a todos.
+            </p>
+
+            <div class="footer__social">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Spotify">
+                <i class="fab fa-spotify"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__group">
+              <h3 class="footer__heading">Navegue</h3>
+              <ul class="footer__menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="./pages/biblioteca.html">Biblioteca</a></li>
+                <li><a href="./pages/artigos.html">Artigos</a></li>
+                <li><a href="./pages/estudos.html">Estudos</a></li>
+                <li><a href="./pages/contato.html">Contato</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Recursos</h3>
+              <ul class="footer__menu">
+                <li><a href="./pages/biblioteca.html">Livros PDF</a></li>
+                <li><a href="./pages/estudos.html">Roteiros de Estudo</a></li>
+                <li><a href="./pages/audio.html">Áudios</a></li>
+                <li><a href="./pages/videos.html">Vídeos</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__group">
+              <h3 class="footer__heading">Institucional</h3>
+              <ul class="footer__menu">
+                <li><a href="./pages/sobre.html">Sobre Nós</a></li>
+                <li>
+                  <a href="./pages/privacy.html">Política de Privacidade</a>
+                </li>
+                <li>
+                  <a href="./pages/terms-of-service.html">Termos de Uso</a>
+                </li>
+                <li><a href="./pages/contato.html">Fale Conosco</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2025 Luz Interior - Portal Espírita. Todos os direitos
+            reservados.
+          </p>
+          <p class="footer__credits">
+            Desenvolvido com <i class="fas fa-heart"></i> e boas vibrações
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie consent -->
+    <div class="cookie-consent">
+      <div class="container">
+        <div class="cookie-consent__content">
+          <p>
+            Utilizamos cookies para melhorar sua experiência em nosso site. Ao
+            continuar navegando, você concorda com nossa
+            <a href="./pages/privacy.html">Política de Privacidade</a>.
+          </p>
+          <div class="cookie-consent__actions">
+            <button
+              class="btn btn--secondary btn--small cookie-consent__accept"
+            >
+              Aceitar
+            </button>
+            <button
+              class="btn btn--outline btn--small cookie-consent__settings"
+            >
+              Configurações
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification template -->
+    <div class="notification" hidden>
+      <div class="notification__content">
+        <i class="notification__icon"></i>
+        <p class="notification__message"></p>
+      </div>
+      <button class="notification__close" aria-label="Fechar notificação">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js" type="module"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('./sw.js')
+            .then(registration => {
+              console.log(
+                'Service Worker registrado com sucesso:',
+                registration.scope
+              )
+            })
+            .catch(error => {
+              console.log('Falha ao registrar o Service Worker:', error)
+            })
+        })
+      }
+    </script>
+  </body>
+</html>
